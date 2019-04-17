@@ -1,0 +1,5 @@
+recursive-include include *.pxd *.h
+recursive-exclude src *.pyx *.pxi
+include LICENSE
+include docs/LICENSE_THIRD_PARTY
+include docs/source/license.rst

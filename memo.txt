@@ -1,0 +1,24 @@
+find_packages() を使用
+・パッケージ名(temp)を変更
+・中に __init__.py を用意する。
+※ CMakeExtension で定義するため、あまりメリットない？
+
+・階層の定義は、現状では不可。(↓の原因から?)
+・パッケージ名 = ソースコードにしないと×らしい
+※ CMakeLists.txt を定義しているフォルダの pyx ファイル名を入れる。
+※ パッケージ名に階層名を入れてみたが、/, \, どちらもエラーが出た。
+※ . なら問題ないが、temp フォルダ階層に出力される。
+
+もしやるとしたら
+setup.py の extdir を CMakeLists.txt のフォルダ毎に切り替える仕組みを実装する必要が出てくる。
+
+※ CMAKE_LIBRARY_OUTPUT_DIRECTORY を切り替え？(cython の cmake ファイルに出力先を変更する仕組み実装?)
+※ package の方は、あらかじめ __init__.py を用意しておけば対処可能
+
+データとして
+※ src - pxi/pyx ファイルを配置する。(in として作成?)
+※ include - pxd/h ファイルを配置する。
+※ (package名フォルダ) - py ファイルを配置。
+
+sphinx-apidoc -F -o docs/source/reference src/
+で生成した rst ファイルについて package  名が考慮されない形で出力されるため修正を加える事。
