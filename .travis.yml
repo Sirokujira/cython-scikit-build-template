@@ -1,6 +1,6 @@
 # 'sudo' is enabled automatically by the 'apt' addon below.
-#sudo: false 
-#sudo: required
+# sudo: false 
+# sudo: required
 
 language: python            # this works for Linux but is an error on macOS or Windows
 
@@ -23,8 +23,6 @@ matrix:
     env:
     - PCL_VERSION="1.7"
     - OS_VERSION="xenial"
-    - NOSEATTR="not pcl_ver_0_4 and not pcl_over_18"
-    - MATRIX_EVAL="CC=gcc && CXX=g++"
   - name: Python 3.5 on Xenial
     dist: xenial
     python: '3.5'
@@ -39,8 +37,6 @@ matrix:
     env:
     - PCL_VERSION="1.7"
     - OS_VERSION="xenial"
-    - NOSEATTR="not pcl_ver_0_4 and not pcl_over_18"
-    - MATRIX_EVAL="CC=gcc && CXX=g++"
   - name: Python 3.6 on Xenial
     dist: xenial
     python: '3.6'
@@ -53,10 +49,7 @@ matrix:
         - openni2-utils
         - build-essential
     env:
-    - PCL_VERSION="1.7"
     - OS_VERSION="xenial"
-    - NOSEATTR="not pcl_ver_0_4 and not pcl_over_18"
-    - MATRIX_EVAL="CC=gcc && CXX=g++"
   - name: Python 3.7 on Xenial
     dist: xenial
     python: '3.7'
@@ -69,117 +62,86 @@ matrix:
         - openni2-utils
         - build-essential
     env:
-    - PCL_VERSION="1.7"
     - OS_VERSION="xenial"
-    - NOSEATTR="not pcl_ver_0_4 and not pcl_over_18"
-    - MATRIX_EVAL="CC=gcc && CXX=g++"
-  - name: Python 2.7 on Xenial(clang)
-    dist: xenial
-    python: '2.7'
-    compiler: clang
-    addons:
-      apt:
-        sources:
-        - ubuntu-toolchain-r-test
-    env:
-    - PCL_VERSION="1.7"
-    - OS_VERSION="xenial"
-    - NOSEATTR="not pcl_ver_0_4 and not pcl_over_18"
-    - MATRIX_EVAL="CC=clang && CXX=clang++"
-  - name: Python 3.5 on Xenial(clang)
-    dist: xenial
-    python: '3.5'
-    compiler: clang
-    addons:
-      apt:
-        sources:
-        - ubuntu-toolchain-r-test
-        packages:
-        - openni2-utils
-    env:
-    - PCL_VERSION="1.7"
-    - OS_VERSION="xenial"
-    - NOSEATTR="not pcl_ver_0_4 and not pcl_over_18"
-    - MATRIX_EVAL="CC=clang && CXX=clang++"
-  - name: Python 3.6 on Xenial(clang)
-    dist: xenial
-    python: '3.6'
-    compiler: clang
-    addons:
-      apt:
-        sources:
-        - ubuntu-toolchain-r-test
-        packages:
-        - openni2-utils
-    env:
-    - PCL_VERSION="1.7"
-    - OS_VERSION="xenial"
-    - NOSEATTR="not pcl_ver_0_4 and not pcl_over_18"
-    - MATRIX_EVAL="CC=clang && CXX=clang++"
-  - name: Python 3.7 on Xenial(clang)
-    dist: xenial
-    python: '3.7'
-    compiler: clang
-    addons:
-      apt:
-        sources:
-        - ubuntu-toolchain-r-test
-        packages:
-        - openni2-utils
-    env:
-    - PCL_VERSION="1.7"
-    - OS_VERSION="xenial"
-    - NOSEATTR="not pcl_ver_0_4 and not pcl_over_18"
-    - MATRIX_EVAL="CC=clang && CXX=clang++"
-  - name: Python 2.7.16 on macOS using homebrew
+  # - name: Python 2.7 on Xenial(clang)
+  #   dist: xenial
+  #   python: '2.7'
+  #   compiler: clang
+  #   addons:
+  #     apt:
+  #       sources:
+  #       - ubuntu-toolchain-r-test
+  #   env:
+  #   - OS_VERSION="xenial"
+  # - name: Python 3.5 on Xenial(clang)
+  #   dist: xenial
+  #   python: '3.5'
+  #   compiler: clang
+  #   addons:
+  #     apt:
+  #       sources:
+  #       - ubuntu-toolchain-r-test
+  #       packages:
+  #       - openni2-utils
+  #   env:
+  #   - OS_VERSION="xenial"
+  # - name: Python 3.6 on Xenial(clang)
+  #   dist: xenial
+  #   python: '3.6'
+  #   compiler: clang
+  #   addons:
+  #     apt:
+  #       sources:
+  #       - ubuntu-toolchain-r-test
+  #       packages:
+  #       - openni2-utils
+  #   env:
+  #   - OS_VERSION="xenial"
+  # - name: Python 3.7 on Xenial(clang)
+  #   dist: xenial
+  #   python: '3.7'
+  #   compiler: clang
+  #   addons:
+  #     apt:
+  #       sources:
+  #       - ubuntu-toolchain-r-test
+  #       packages:
+  #       - openni2-utils
+  #   env:
+  #   - PCL_VERSION="1.7"
+  #   - OS_VERSION="xenial"
+  - name: Python 2.7.16 on macOS
     os: osx
     language: generic
     env:
     - PYTHON_VERSION=2.7.16
     - PYENV_ROOT=~/.pyenv
     - PATH=$PYENV_ROOT/shims:$PATH:$PYENV_ROOT/bin
-    - NOSEATTR="not pcl_ver_0_4"
-  - name: Python 3.5.7 on macOS using homebrew
+  - name: Python 3.5.7 on macOS
     os: osx
     language: generic
     env:
     - PYTHON_VERSION=3.5.7
     - PYENV_ROOT=~/.pyenv
     - PATH=$PYENV_ROOT/shims:$PATH:$PYENV_ROOT/bin
-    - NOSEATTR="not pcl_ver_0_4"
-  - name: Python 3.6.8 on macOS using homebrew
+  - name: Python 3.6.8 on macOS
     os: osx
     language: generic
     env:
     - PYTHON_VERSION=3.6.8
     - PYENV_ROOT=~/.pyenv
     - PATH=$PYENV_ROOT/shims:$PATH:$PYENV_ROOT/bin
-    - NOSEATTR="not pcl_ver_0_4"
-  - name: Python 3.7.3 on macOS using homebrew
+  - name: Python 3.7.3 on macOS
     os: osx
     language: generic
     env:
     - PYTHON_VERSION=3.7.3
     - PYENV_ROOT=~/.pyenv
     - PATH=$PYENV_ROOT/shims:$PATH:$PYENV_ROOT/bin
-    - NOSEATTR="not pcl_ver_0_4"
 cache:
   - pip
   - ccache
-#   before_cache:
-#     - brew cleanup
 
-
-before_cache:
-  - brew cleanup
-
-
-
-before_install:
-  - if [ ${TRAVIS_OS_NAME} = "osx" ]; then
-      brew update >/dev/null;
-      brew install ccache;
-    fi
 
 install:
   - pip install --upgrade pip
@@ -198,9 +160,9 @@ install:
       python setup.py build_ext -i --plat-name macosx-10.9-x86_64;
       python setup.py bdist_wheel --plat-name macosx-10.9-x86_64;
     else
-      ${MATRIX_EVAL} python setup.py build_ext -i;
-      ${MATRIX_EVAL} python setup.py install;
-      ${MATRIX_EVAL} python setup.py bdist_wheel;
+      python setup.py build_ext -i;
+      python setup.py install;
+      python setup.py bdist_wheel;
     fi
 
 # command to run tests
