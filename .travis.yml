@@ -13,54 +13,51 @@ matrix:
     dist: xenial
     python: '2.7'
     compiler: gcc
-    addons:
-      apt:
-        sources:
-        - ubuntu-toolchain-r-test
-        packages:
-        - openni2-utils
-        - build-essential
+    # addons:
+    #   apt:
+    #     sources:
+    #     # - ubuntu-toolchain-r-test
+    #     # - docker-xenial
+    #     packages:
+    #     - build-essential
     env:
-    - PCL_VERSION="1.7"
     - OS_VERSION="xenial"
   - name: Python 3.5 on Xenial
     dist: xenial
     python: '3.5'
     compiler: gcc
-    addons:
-      apt:
-        sources:
-        - ubuntu-toolchain-r-test
-        packages:
-        - openni2-utils
-        - build-essential
+    # addons:
+    #   apt:
+    #     sources:
+    #     - ubuntu-toolchain-r-test
+    #     packages:
+    #     - build-essential
     env:
-    - PCL_VERSION="1.7"
     - OS_VERSION="xenial"
   - name: Python 3.6 on Xenial
     dist: xenial
     python: '3.6'
     compiler: gcc
-    addons:
-      apt:
-        sources:
-        - ubuntu-toolchain-r-test
-        packages:
-        - openni2-utils
-        - build-essential
+    # addons:
+    #   apt:
+    #     sources:
+    #     - ubuntu-toolchain-r-test
+    #     packages:
+    #     - openni2-utils
+    #     - build-essential
     env:
     - OS_VERSION="xenial"
   - name: Python 3.7 on Xenial
     dist: xenial
     python: '3.7'
     compiler: gcc
-    addons:
-      apt:
-        sources:
-        - ubuntu-toolchain-r-test
-        packages:
-        - openni2-utils
-        - build-essential
+    # addons:
+    #   apt:
+    #     sources:
+    #     - ubuntu-toolchain-r-test
+    #     packages:
+    #     - openni2-utils
+    #     - build-essential
     env:
     - OS_VERSION="xenial"
   # - name: Python 2.7 on Xenial(clang)
@@ -108,7 +105,6 @@ matrix:
   #       packages:
   #       - openni2-utils
   #   env:
-  #   - PCL_VERSION="1.7"
   #   - OS_VERSION="xenial"
   - name: Python 2.7.16 on macOS
     os: osx
@@ -186,7 +182,7 @@ deploy:
   provider: pypi
   user: sirokujira
   password:
-    secure: zz1i5hJ9zdXZ+WryKx5PrughDzlJqClAAeEaVgyEQ/almoYkJANWUDW/MbI/Lf39lvhVWwhU7eSai/wPAxasNTSb9L60IFAfqmLDVYzgi2oqBnVrG2la5RDM0ccObwYlmnEjP+08S/R+049kHSEtsu2dszt2Mmko4EUvyzdO5TqYum6pNmB/8XZYRaVVNixva4C76aYDfJ3yfOyJl/pUQoPS3T0u/DWzAJuTgzMS0SRwtEFsno3BK1cRW8cpUThF8/LWGX6Q4C0pReGi4II8bZtlgggrqDZNEszXyGxEbyIvJM7BkxB6uu6AFQtro5ciR3mwSlx5++3KZ6rb9R6nON1HqtrCBiX1TNcBvB7qpYl0hRnAjpDaBmLvK8l74py0sKqb5kpxHUCQ2N24OlVGGf6zC26AuLuJjmq4t9z8A3C9RG+OV0nznY68EsbgHF0pVNbp/TNpfmGG4pXG23exHkFz+kirQGMe4BcQGMIzc1ULpmdu/iaM47BzvsKW18BYT1PY3EkqDWjNR83aFV/YI52L+jzxSkE+GVfkDqARRlP63dE5tfio4+wE84gNgiZwh/zCpBO+Kf4jPDSG2smfHnFQL37COxoLF4R3sUFlY/oUCaXNSuIeLrTtIVk12MzYWZIVm5IxjVUlJIzMJVY7ilexS8MzZgK4lwnpWNFwxyc=
+    secure: k0rnD6VDjBBU7ycQdsWFflvSVBrpxuHEJinkdRSJtV6+swcwGaLhSgwPZICe7UTaoiVjzD2rVP/Bfy3vZleVyhzxYUb7Nph4/Mdk4NbyWqSmADaYDhk6ZhRGQm8XXyrcncun02pNH7Rz7afnslY1Dq/o2d+sO0oK5pWQuIXIKlo7F51Y6r5KzqyZiCkmmBYUMrW/oh3faT/HZl8Mc3cH+W6FRAeSWX3Av50nJMU1FbRg4dZf99huGKiTsqVFF3DtT/QGDm3NCEUiHTSSkqgCH4Bm9XnnpBTFj415uP1yBTqEjkyIhY+dpAvWpxireXZs/LOckUxF1+BJjuGEKNU4ahWFWTS3DkRkkmYmuyV4aFBLKfS9CGv2JDMmO37hQp8oR9CdQLmufGRHCTEw5nU5/NSyg1ebbtHxQojXd7S4/ITxWCnAoRLQgIWGSyjjOCnujA9R8KMeqebp+5V6C+FSUQROVmk/JNJLEfNy+ZZgtV/nqnkHRGJRaMFuYE4xBxY//5UiuW2z6AIpwPfUO0whTBd+AZ6RiXMJyauU1oToRh/lhSjh6c681kb/7oId5FuyFPrOd8Re2bPzbzefmD5JUbnt3SoGrB2CdEk0Q989EFSQlq+np2UaYx0D6ki6zXjtPSx4mPJ3qUlXCtQN2mvFqc2YaUSaLFnwDeJBS/cMKSE=
   on:
     # test
     branch: master
