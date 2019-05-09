@@ -1,6 +1,6 @@
 # Cython generator code
-src/*.cpp
-src/*.html
+temp/*.cpp
+temp/*.html
 *.bak
 
 # https://raw.githubusercontent.com/github/gitignore/master/CMake.gitignore

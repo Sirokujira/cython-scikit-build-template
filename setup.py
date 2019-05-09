@@ -41,12 +41,13 @@ MOD_NAMES = [
 setup(name='scikit-template',
       description='cython cmake template modules',
       url='http://github.com/sirokujira/cython-cmake-template',
-      version='0.0',
+      version='0.0.1dev',
       author='Tooru Oonuma',
       author_email='t753github@gmail.com',
       maintainer='Tooru Oonuma',
       maintainer_email='t753github@gmail.com',
       license='BSD',
+      # cmake_args=['-DSOME_FEATURE:BOOL=OFF']
       # packages=find_packages(),
       packages=[
           'template',

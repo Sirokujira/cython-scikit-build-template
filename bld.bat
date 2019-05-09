@@ -7,7 +7,7 @@ REM release?
 python setup.py build_ext -i
 python setup.py install
 REM generate package
-REM python setup.py bdist_wheel
+python setup.py sdist bdist_wheel
 REM api document update from SourceCode
 REM sphinx-apidoc -F -o docs/source/reference temp
 REM and remove _build, _static, _templates, conf.py, make.bat, Makefile

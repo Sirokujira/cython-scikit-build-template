@@ -1,9 +1,4 @@
 # If the pyx file is a C++ file, we should specify that here.
-include_directories(${EXTERNAL_PKG_INCLUDE})
-message(STATUS "EXTERNAL_PKG_LIBRARYDIR")
-message(STATUS ${EXTERNAL_PKG_LIBRARYDIR})
-link_directories(${EXTERNAL_PKG_LIBRARYDIR})
-add_definitions(${EXTERNAL_PKG_DEFINITIONS})
 
 # skbuild
 # rect.pyx
