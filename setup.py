@@ -50,7 +50,7 @@ setup(name='scikit-build-template',
       # cmake_args=['-DSOME_FEATURE:BOOL=OFF']
       # packages=find_packages(),
       packages=[
-          'template',
+          'temp',
       ],
       zip_safe=False,
       # The extra '/' was *only* added to check that scikit-build can handle it. 
