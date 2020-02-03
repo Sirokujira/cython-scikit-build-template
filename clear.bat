@@ -1,4 +1,4 @@
-set PACKAGENAME=template
+set PACKAGENAME=scikit-build-template
 set SOURCENAME=temp
 del %SOURCENAME%\*.pyd
 del cythonize.json

@@ -1,8 +1,8 @@
-scikit-build
 wheel>=0.29.0
 setuptools>=28.0.0
 packaging
 ninja
 cmake
-Cython
+Cython>=0.25.2
 numpy
+scikit-build

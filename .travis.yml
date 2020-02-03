@@ -166,7 +166,7 @@ script:
   # - nosetests --verbose
   # - coverage run --parallel-mode tests/pi_calculator_test.py
   # - coverage run --parallel-mode tests/rect_test.py
-  - nosetests --with-coverage --cover-erase --cover-package=template --verbose
+  - nosetests --with-coverage --cover-erase --cover-package=scikit-build-template --verbose
   # - py.test --cov pcl
   # examples
   # - python examples/CallTest.py

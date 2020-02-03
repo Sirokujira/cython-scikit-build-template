@@ -23,4 +23,4 @@ REM check test
 REM $ python setup.py test
 REM nose doc : https://nose.readthedocs.io/en/latest/plugins/cover.html
 REM Check Coverage
-nosetests --with-coverage --cover-package=template
+nosetests --with-coverage --cover-package=scikit-build-template

@@ -1,4 +1,4 @@
-export PACKAGENAME=template
+export PACKAGENAME=scikit-build-template
 export SOURCENAME=temp
 sudo rm ${SOURCENAME}/*.pyd
 sudo rm cythonize.json

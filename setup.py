@@ -38,7 +38,7 @@ MOD_NAMES = [
 ]
 
 
-setup(name='scikit-template',
+setup(name='scikit-build-template',
       description='cython cmake template modules',
       url='http://github.com/sirokujira/cython-cmake-template',
       version='0.0.1dev',
@@ -54,7 +54,7 @@ setup(name='scikit-template',
       ],
       zip_safe=False,
       # The extra '/' was *only* added to check that scikit-build can handle it. 
-      package_dir={'template': 'temp/'}, 
+      package_dir={'scikit-build-template': 'temp/'}, 
       setup_requires=setup_requires,
       install_requires=install_requires,
       classifiers=[
