@@ -112,7 +112,7 @@ jobs:
   build:
     needs:
       - build_sdist
-      - build_wheel_linux
+      #- build_wheel_linux
       - build_wheel_macos
       - build_wheel_windows
     runs-on: ubuntu-latest
