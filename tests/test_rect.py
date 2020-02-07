@@ -1,7 +1,7 @@
 from unittest import TestCase
 from nose.tools import assert_equal
 
-from template.rect import Rectangle
+from temp.rect import Rectangle
 
 class RectangleTest(TestCase):
 
