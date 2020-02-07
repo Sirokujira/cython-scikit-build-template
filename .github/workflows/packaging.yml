@@ -97,8 +97,6 @@ jobs:
     - name: Install dependencies
       run: python -m pip install -r requirements.txt
     - name: Configure
-        # set(ENV{CC} "cl")
-        # set(ENV{CXX} "cl")
         run: |
         execute_process(
           COMMAND "${ { matrix.environment_script } }" && set
