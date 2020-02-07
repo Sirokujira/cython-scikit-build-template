@@ -1,28 +1,15 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 from __future__ import print_function
-from collections import defaultdict
+# from collections import defaultdict
 # This line replaces 'from setuptools import setup'
 from skbuild import setup
-from skbuild.cmaker import get_cmake_version
-from skbuild.exceptions import SKBuildError
+# from skbuild.cmaker import get_cmake_version
+# from skbuild.exceptions import SKBuildError
 # from packaging.version import LegacyVersion
-from distutils.version import LooseVersion
+# from distutils.version import LooseVersion
 
-import subprocess
-import numpy
-import sys
-import os
-import time
-import contextlib
-
-import sysconfig
-import platform
-
-from shutil import copyfile, copymode
-
-import shutil
-from ctypes.util import find_library
+# from ctypes.util import find_library
 setup_requires = []
 install_requires = [
     'filelock',
