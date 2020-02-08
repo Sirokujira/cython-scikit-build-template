@@ -80,7 +80,7 @@ jobs:
         python-version: [2.7, 3.6, 3.7, 3.8]
         #architecture: ['x86', 'x64']
         architecture: ['x64']
-        environment_script: "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Auxiliary/Build/vcvars64.bat"
+        environment_script: C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Auxiliary/Build/vcvars64.bat
 
     steps:
     - uses: actions/checkout@master
