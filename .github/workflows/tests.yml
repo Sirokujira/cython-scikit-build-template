@@ -57,7 +57,7 @@ jobs:
     - name: Generate coverage report
       run: |
         python -m pip install -r requirements-test.txt -q
-        nosetests -v -w tests/ --with-coverage
+        nosetests ./tests/test_rect.py --with-coverage
         coverage xml
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
