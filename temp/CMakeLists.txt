@@ -10,7 +10,8 @@ python_extension_module(rect)
 # python_extension_module(rect
 #                         LINKED_MODULES_VAR linked_module_list
 #                         FORWARD_DECL_MODULES_VAR fdecl_module_list)
-install(TARGETS rect LIBRARY DESTINATION ${PROJECT_SOURCE_DIR}/temp)
+#install(TARGETS rect LIBRARY DESTINATION ${PROJECT_SOURCE_DIR}/temp)
+install(TARGETS rect LIBRARY DESTINATION temp)
 
 # pi_calculator.pyx
 # add_cython_target(pi_calculator pi_calculator.pyx)
@@ -22,4 +23,5 @@ python_extension_module(pi_calculator)
 # python_extension_module(pi_calculator
 #                         LINKED_MODULES_VAR linked_module_list
 #                         FORWARD_DECL_MODULES_VAR fdecl_module_list)
-install(TARGETS pi_calculator LIBRARY DESTINATION ${PROJECT_SOURCE_DIR}/temp)
+#install(TARGETS pi_calculator LIBRARY DESTINATION ${PROJECT_SOURCE_DIR}/temp)
+install(TARGETS pi_calculator LIBRARY DESTINATION temp)
