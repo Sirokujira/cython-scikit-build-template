@@ -100,7 +100,7 @@ jobs:
       shell: cmd
       run: |
         '"%VCVARS64%"'
-        python setup.py bdist_wheel
+        python setup.py bdist_wheel -G "NMake Makefiles"
       env:
         VCVARS64: C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Auxiliary/Build/vcvars64.bat
         # This is for avoiding the error like this:
