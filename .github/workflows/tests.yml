@@ -23,9 +23,9 @@ jobs:
     - name: Install MSVC++ for Python 2.7
       if: startsWith(matrix.platform, 'windows-') && matrix.python-version == 2.7
       run: choco install vcpython27 -y
+    #- name: Install MSVC++
+    #  if: startsWith(matrix.platform, 'windows-')
     - uses: ilammy/msvc-dev-cmd@v1
-    - name: Install MSVC++
-      if: startsWith(matrix.platform, 'windows-') 
     - name: Install dependencies
       run: |
         python -m pip install -U pip
