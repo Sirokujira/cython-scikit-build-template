@@ -105,10 +105,11 @@ jobs:
     - uses: ilammy/msvc-dev-cmd@v1
       with:
         arch: ${{ matrix.architecture }}
-        sdk: 10.0.10240.0
+        sdk: 10.0.16299.0
         toolset: 14.11
     - name: Create packages
       run: |
+        choco install windows-sdk-10.0
         echo ${INCLUDE}
         python setup.py bdist_wheel -G "NMake Makefiles"
     - uses: actions/upload-artifact@master
