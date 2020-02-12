@@ -54,7 +54,8 @@ build_script:
 
 test_script:
   # - nosetests -A "%NOSEATTR%" --verbose
-  - nosetests --verbose
+  # - nosetests --verbose
+  - nosetests ./tests/test_rect.py --with-coverage
 
 after_test:
   # If tests are successful, create binary packages for the project.

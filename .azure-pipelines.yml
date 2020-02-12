@@ -2,6 +2,8 @@ jobs:
   - job: ubuntu1604
     displayName: Ubuntu 16.04 Build
     timeoutInMinutes: 0
+    trigger:
+      - master
     pool:
       vmImage: 'Ubuntu 16.04'
     strategy:
@@ -31,11 +33,13 @@ jobs:
           python setup.py build_ext -i
           python setup.py install
         displayName: 'Build Library'
-      - script: nosetests
+      - script: nosetests ./tests/test_rect.py --with-coverage
         displayName: 'Run Unit Tests'
   - job: osx
     displayName: macOS High Sierra
     timeoutInMinutes: 0
+    trigger:
+      - master
     pool:
       vmImage: 'macOS-10.13'
     strategy:
@@ -65,11 +69,13 @@ jobs:
           mkdir $BUILD_DIR && cd $BUILD_DIR
           python setup.py install
         displayName: 'Build Library'
-      - script: nosetests
+      - script: nosetests ./tests/test_rect.py --with-coverage
         displayName: 'Run Unit Tests'
   - job: vs2017
     displayName: Windows VS2017 Build
     timeoutInMinutes: 0
+    trigger:
+      - master
     pool:
       vmImage: 'vs2017-win2016'
     strategy:
@@ -128,6 +134,7 @@ jobs:
       VCVARSALL: '%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvarsall.bat'
       CONFIGURATION: 'Release'
     steps:
+      - template: azure-pipelines/windows-install-ninja.yml
       - task: UsePythonVersion@0
         inputs:
           versionSpec: '$(python.version)'
@@ -139,17 +146,17 @@ jobs:
           %VCPKG_DIR%\vcpkg.exe version
         displayName: 'Bootstrap vcpkg'
       - script: |
-          # %VCPKG_DIR%\vcpkg.exe install hogefuga
+          rem %VCPKG_DIR%\vcpkg.exe install hogefuga
           %VCPKG_DIR%\vcpkg.exe list
           pip install -r requirements.txt
         displayName: 'Install Dependencies'
       - script: |
-          rmdir %VCPKG_DIR%\downloads /S /Q
-          rmdir %VCPKG_DIR%\packages /S /Q
+          rem rmdir %VCPKG_DIR%\downloads /S /Q
+          rem rmdir %VCPKG_DIR%\packages /S /Q
         displayName: 'Free up space'
       - script: |
           python setup.py build_ext -i
           python setup.py install
         displayName: 'Build Library'
-      - script: nosetests
+      - script: nosetests ./tests/test_rect.py --with-coverage
         displayName: 'Run Unit Tests'

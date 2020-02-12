@@ -46,13 +46,31 @@ MIT License (see `LICENSE` file).
 
 ## Reference
 
-reference source github
+# reference source github
 
 * cython-template : https://github.com/jakevdp/cython_template
-* 
-python_cpp_example : https://github.com/benjaminjack/python_cpp_example
+
+* python_cpp_example : https://github.com/benjaminjack/python_cpp_example
+
 * effect setup.py
 
 * scikit-build : https://scikit-build.readthedocs.io/en/latest/index.html
 
+# build
 
+* appveyor : https://www.appveyor.com/
+
+* travisci : https://travis-ci.org/
+
+* azure-pipeline : https://azure.microsoft.com/ja-jp/services/devops/pipelines/
+
+
+# Test
+
+* coveralls : https://coveralls.io/
+
+* codecov : https://codecov.io/
+
+# doc
+
+* readthedocs : https://readthedocs.org/
