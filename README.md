@@ -1,7 +1,8 @@
 # scikit-template : Cython cmake template examples
 
 [![pypi](https://img.shields.io/pypi/v/scikit-build-template.svg)](https://pypi.python.org/pypi/scikit-build-template)
-[![GitHub license](https://img.shields.io/github/license/sirokujira/cython-scikit-build-template.svg)](https://github.com/sirokujira/template)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 [![travisCI](https://img.shields.io/travis/sirokujira/cython-scikit-build-template.svg)](https://travis-ci.org/sirokujira/cython-scikit-build-template)
 [![CircleCI](https://circleci.com/gh/Sirokujira/cython-scikit-build-template.svg?style=svg)](https://circleci.com/gh/Sirokujira/cython-scikit-build-template)
@@ -91,4 +92,6 @@ $ travis encrypt $(your-pypi-password-here) --add deploy.password
 
 ## Replace
 
-* README.md.in : 
+* LICENSE Badge : https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
+ 
+* README.md
