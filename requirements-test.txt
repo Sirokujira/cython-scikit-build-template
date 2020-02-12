@@ -1,7 +1,7 @@
 nose
 coverage
-coveralls
 codecov
+coveralls
 mock
 pytest
 pytest-cov

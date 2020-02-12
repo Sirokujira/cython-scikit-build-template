@@ -37,8 +37,10 @@ environment:
 
 
 install:
-  - conda install -y -q wheel
-  - conda install -y -q setuptools
+  - python -m pip install -r requirements.txt
+  - python -m pip install -r requirements-test.txt
+  # - conda install -y -q wheel
+  # - conda install -y -q setuptools
 
 
 build_script:
@@ -46,8 +48,6 @@ build_script:
   # - conda install -y -q Cython
   # - conda install -y -q numpy
   # build use setup.py
-  - python -m pip install -r requirements.txt
-  - python -m pip install -r requirements-test.txt
   - python setup.py build_ext -i
   - python setup.py install
 

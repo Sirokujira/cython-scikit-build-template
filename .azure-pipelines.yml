@@ -148,8 +148,8 @@ jobs:
           rmdir %VCPKG_DIR%\packages /S /Q
         displayName: 'Free up space'
       - script: |
-        python setup.py build_ext -i
-        python setup.py install
+          python setup.py build_ext -i
+          python setup.py install
         displayName: 'Build Library'
       - script: nosetests
         displayName: 'Run Unit Tests'
