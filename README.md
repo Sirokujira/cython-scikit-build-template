@@ -2,11 +2,17 @@
 
 [![pypi](https://img.shields.io/pypi/v/scikit-build-template.svg)](https://pypi.python.org/pypi/scikit-build-template)
 [![GitHub license](https://img.shields.io/github/license/sirokujira/cython-scikit-build-template.svg)](https://github.com/sirokujira/template)
-[![travis](https://img.shields.io/travis/sirokujira/cython-scikit-build-template.svg)](https://travis-ci.org/sirokujira/cython-scikit-build-template)
+
+[![travisCI](https://travis-ci.org/Sirokujira/cython-scikit-build-template.svg?branch=master)](https://travis-ci.org/Sirokujira/cython-scikit-build-template)
 [![circleci](https://img.shields.io/travis/sirokujira/cython-scikit-build-template.svg)](https://travis-ci.org/sirokujira/cython-scikit-build-template)
-[![appveyor](https://img.shields.io/travis/sirokujira/cython-scikit-build-template.svg)](https://travis-ci.org/sirokujira/cython-scikit-build-template)
-[![coveralls](https://img.shields.io/coveralls/sirokujira/cython-scikit-build-template.svg)](https://coveralls.io/github/sirokujira/cython-scikit-build-template)
-[![Read the Docs](https://readthedocs.org/projects/template/badge/?version=stable)](https://cython-scikit-build-template.template.org/en/stable/)
+[![appveyor](https://ci.appveyor.com/api/projects/status/094vyvbr9r012ial?svg=true)](https://ci.appveyor.com/project/Sirokujira/cython-scikit-build-template)
+
+[![Coverage](https://coveralls.io/repos/github/Sirokujira/cython-scikit-build-template/badge.svg?branch=master)](https://coveralls.io/github/Sirokujira/cython-scikit-build-template?branch=master)
+
+[![codecov](https://codecov.io/gh/Sirokujira/cython-scikit-build-template/branch/master/graph/badge.svg)](https://codecov.io/gh/Sirokujira/cython-scikit-build-template)
+
+
+[![Read the Docs](https://readthedocs.org/projects/cython-scikit-build-template/badge/?version=latest)](https://cython-scikit-build-template.readthedocs.io/en/latest/?badge=latest)
 
 [**Website**](https://cython-scikit-build-template.template.org/)
 | [**Docs**](https://cython-scikit-build-template.template.org/en/stable/)

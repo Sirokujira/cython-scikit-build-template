@@ -2,8 +2,6 @@ jobs:
   - job: ubuntu1604
     displayName: Ubuntu 16.04 Build
     timeoutInMinutes: 0
-    trigger:
-      - master
     pool:
       vmImage: 'Ubuntu 16.04'
     strategy:
@@ -38,8 +36,6 @@ jobs:
   - job: osx
     displayName: macOS High Sierra
     timeoutInMinutes: 0
-    trigger:
-      - master
     pool:
       vmImage: 'macOS-10.13'
     strategy:
@@ -74,8 +70,6 @@ jobs:
   - job: vs2017
     displayName: Windows VS2017 Build
     timeoutInMinutes: 0
-    trigger:
-      - master
     pool:
       vmImage: 'vs2017-win2016'
     strategy:
