@@ -3,17 +3,16 @@
 [![pypi](https://img.shields.io/pypi/v/scikit-build-template.svg)](https://pypi.python.org/pypi/scikit-build-template)
 [![GitHub license](https://img.shields.io/github/license/sirokujira/cython-scikit-build-template.svg)](https://github.com/sirokujira/template)
 
-[![travisCI](https://travis-ci.org/Sirokujira/cython-scikit-build-template.svg?branch=master)](https://travis-ci.org/Sirokujira/cython-scikit-build-template)
-[![circleci](https://img.shields.io/travis/sirokujira/cython-scikit-build-template.svg)](https://travis-ci.org/sirokujira/cython-scikit-build-template)
+[![travisCI](https://img.shields.io/travis/sirokujira/cython-scikit-build-template.svg)](https://travis-ci.org/sirokujira/cython-scikit-build-template)
+[![CircleCI](https://circleci.com/gh/Sirokujira/cython-scikit-build-template.svg?style=svg)](https://circleci.com/gh/Sirokujira/cython-scikit-build-template)
 [![appveyor](https://ci.appveyor.com/api/projects/status/094vyvbr9r012ial?svg=true)](https://ci.appveyor.com/project/Sirokujira/cython-scikit-build-template)
-[![Azure pipeline](https://sirokujira.visualstudio.com/scikit-build-template/_apis/build/status/Sirokujira.cython-scikit-build-template?branchName=master)](https://sirokujira.visualstudio.com/scikit-build-template/_build/latest?definitionId=3&branchName=master)
+[![Build Status](https://sirokujira.visualstudio.com/scikit-build-template/_apis/build/status/Sirokujira.cython-scikit-build-template?branchName=master)](https://sirokujira.visualstudio.com/scikit-build-template/_build/latest?definitionId=3&branchName=master)
 
 [![Coverage](https://coveralls.io/repos/github/Sirokujira/cython-scikit-build-template/badge.svg?branch=master)](https://coveralls.io/github/Sirokujira/cython-scikit-build-template?branch=master)
-
 [![codecov](https://codecov.io/gh/Sirokujira/cython-scikit-build-template/branch/master/graph/badge.svg)](https://codecov.io/gh/Sirokujira/cython-scikit-build-template)
 
-
 [![Read the Docs](https://readthedocs.org/projects/cython-scikit-build-template/badge/?version=latest)](https://cython-scikit-build-template.readthedocs.io/en/latest/?badge=latest)
+
 
 [**Website**](https://cython-scikit-build-template.template.org/)
 | [**Docs**](https://cython-scikit-build-template.template.org/en/stable/)
@@ -86,10 +85,10 @@ MIT License (see `LICENSE` file).
 
 * travisCI + PyPI(Reference) : https://github.com/travis-ci/travis.rb
 
-```bash
-travis encrypt $(your-pypi-password-here) --add deploy.password
+```sh
+$ travis encrypt $(your-pypi-password-here) --add deploy.password
 ```
 
 ## Replace
 
-* README.md : 
+* README.md.in : 
