@@ -1,5 +1,6 @@
 # Cython generator code
 temp/*.cpp
+temp/*.pyc
 temp/*.so
 temp/*.pyd
 temp/*.html

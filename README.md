@@ -6,6 +6,7 @@
 [![travisCI](https://travis-ci.org/Sirokujira/cython-scikit-build-template.svg?branch=master)](https://travis-ci.org/Sirokujira/cython-scikit-build-template)
 [![circleci](https://img.shields.io/travis/sirokujira/cython-scikit-build-template.svg)](https://travis-ci.org/sirokujira/cython-scikit-build-template)
 [![appveyor](https://ci.appveyor.com/api/projects/status/094vyvbr9r012ial?svg=true)](https://ci.appveyor.com/project/Sirokujira/cython-scikit-build-template)
+[![Azure pipeline](https://sirokujira.visualstudio.com/scikit-build-template/_apis/build/status/Sirokujira.cython-scikit-build-template?branchName=master)](https://sirokujira.visualstudio.com/scikit-build-template/_build/latest?definitionId=3&branchName=master)
 
 [![Coverage](https://coveralls.io/repos/github/Sirokujira/cython-scikit-build-template/badge.svg?branch=master)](https://coveralls.io/github/Sirokujira/cython-scikit-build-template?branch=master)
 
@@ -21,8 +22,7 @@
 | **Examples** ([Official](https://github.com/sirokujira/template/tree/master/examples))
 
 *template* is an implementation of .
-template consists of the core multi-dimensional array class, `template.ndarray`, and many functions on it.
-It supports a subset of `numpy.ndarray` interface.
+template consists、 `temp.rect`.
 
 ## Installation
 
@@ -68,8 +68,9 @@ MIT License (see `LICENSE` file).
 
 * travisci : https://travis-ci.org/
 
-* azure-pipeline : https://azure.microsoft.com/ja-jp/services/devops/pipelines/
+* circleCI : https://circleci.com/
 
+* azure-pipeline : https://azure.microsoft.com/ja-jp/services/devops/pipelines/
 
 # Test
 
@@ -80,3 +81,15 @@ MIT License (see `LICENSE` file).
 # doc
 
 * readthedocs : https://readthedocs.org/
+
+# Package
+
+* travisCI + PyPI(Reference) : https://github.com/travis-ci/travis.rb
+
+```bash
+travis encrypt $(your-pypi-password-here) --add deploy.password
+```
+
+## Replace
+
+* README.md : 

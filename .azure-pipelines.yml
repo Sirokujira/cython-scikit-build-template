@@ -62,7 +62,7 @@ jobs:
           pip install -r requirements-test.txt
         displayName: 'Install Dependencies'
       - script: |
-          mkdir $BUILD_DIR && cd $BUILD_DIR
+          python setup.py build_ext -i
           python setup.py install
         displayName: 'Build Library'
       - script: nosetests ./tests/test_rect.py --with-coverage
