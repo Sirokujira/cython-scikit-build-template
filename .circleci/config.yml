@@ -12,7 +12,11 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          command: python setup.py build_ext -i
+          command: |
+            python -m pip install -r requirements.txt
+            python -m pip install -r requirements-test.txt          
+            python setup.py build_ext -i
+            nosetests ./tests/test_rect.py --with-coverage
           name: Test
 
 workflows:

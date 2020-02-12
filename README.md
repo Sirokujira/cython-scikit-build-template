@@ -86,6 +86,8 @@ MIT License (see `LICENSE` file).
 
 * travisCI + PyPI(Reference) : https://github.com/travis-ci/travis.rb
 
+https://docs.travis-ci.com/user/deployment-v2/providers/pypi/
+
 ```sh
 $ travis encrypt $(your-pypi-password-here) --add deploy.password
 ```
