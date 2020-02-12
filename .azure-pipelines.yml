@@ -8,19 +8,15 @@ jobs:
       matrix:
         Python27:
           python.version: '2.7'
-        variables:
           CMAKE_CXX_FLAGS: '-Wall -Wextra -Wabi -O2'
         Python35:
           python.version: '3.5'
-        variables:
           CMAKE_CXX_FLAGS: '-Wall -Wextra -Wabi -O2'
         Python36:
           python.version: '3.6'
-        variables:
           CMAKE_CXX_FLAGS: '-Wall -Wextra -Wabi -O2'
         Python37:
           python.version: '3.7'
-        variables:
           CMAKE_CXX_FLAGS: '-Wall -Wextra -Wabi -O2'
     steps:
       - task: UsePythonVersion@0
@@ -29,6 +25,7 @@ jobs:
           architecture: 'x64'
       - script: |
           pip install -r requirements.txt
+          pip install -r requirements-test.txt
         displayName: 'Install Dependencies'
       - script: |
           python setup.py build_ext -i
@@ -45,28 +42,24 @@ jobs:
       matrix:
         Python27:
           python.version: '2.7'
-        variables:
           CMAKE_CXX_FLAGS: '-Wall -Wextra -Wabi -O2'
         Python35:
           python.version: '3.5'
-        variables:
           CMAKE_CXX_FLAGS: '-Wall -Wextra -Wabi -O2'
         Python36:
           python.version: '3.6'
-        variables:
           CMAKE_CXX_FLAGS: '-Wall -Wextra -Wabi -O2'
         Python37:
           python.version: '3.7'
-        variables:
           CMAKE_CXX_FLAGS: '-Wall -Wextra -Wabi -O2'
     steps:
       - task: UsePythonVersion@0
         inputs:
           versionSpec: '$(python.version)'
           architecture: 'x64'
-    steps:
       - script: |
           pip install -r requirements.txt
+          pip install -r requirements-test.txt
         displayName: 'Install Dependencies'
       - script: |
           mkdir $BUILD_DIR && cd $BUILD_DIR
@@ -129,17 +122,16 @@ jobs:
           GENERATOR: 'Visual Studio 15 2017 Win64'
           python.version: '3.7'
           CMAKE_CXX_FLAGS: '-Wall -Wextra -Wabi -O2'
-    steps:
-      - task: UsePythonVersion@0
-        inputs:
-          versionSpec: '$(python.version)'
-          architecture: 'x64'
     variables:
       BUILD_DIR: '$(Agent.WorkFolder)\build'
       VCPKG_DIR: '$(Agent.WorkFolder)\vcpkg'
       VCVARSALL: '%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvarsall.bat'
       CONFIGURATION: 'Release'
     steps:
+      - task: UsePythonVersion@0
+        inputs:
+          versionSpec: '$(python.version)'
+          architecture: 'x64'
       - script: |
           git clone https://github.com/microsoft/vcpkg --depth 1 %VCPKG_DIR%
           echo.set(VCPKG_BUILD_TYPE release)>> %VCPKG_DIR%\triplets\%PLATFORM%-windows.cmake

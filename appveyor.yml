@@ -43,9 +43,11 @@ install:
 
 build_script:
   # conda 
-  - conda install -y -q Cython
-  - conda install -y -q numpy
+  # - conda install -y -q Cython
+  # - conda install -y -q numpy
   # build use setup.py
+  - python -m pip install -r requirements.txt
+  - python -m pip install -r requirements-test.txt
   - python setup.py build_ext -i
   - python setup.py install
 
@@ -64,4 +66,15 @@ after_test:
 artifacts:
   # Archive the generated packages in the ci.appveyor.com build report.
 - path: dist\*
+  name: 'Test file'
 
+deploy:
+  provider: GitHub
+  release: $(APPVEYOR_REPO_TAG_NAME)
+  description: ''
+  auth_token: $(github_access)
+  artifact: 'Test file'
+  draft: false
+  prerelease: false
+  on:
+    APPVEYOR_REPO_TAG: true

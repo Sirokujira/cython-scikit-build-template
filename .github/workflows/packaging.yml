@@ -4,12 +4,6 @@ on: [push]
 
 jobs:
   build_sdist:
-    env:
-      # VCVARS64: C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Auxiliary/Build/vcvars64.bat
-      #           C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat
-      # This is for avoiding the error like this:
-      # pyconfig.h(68): fatal error C1083: Cannot open include file: 'io.h': No such file or directory
-      INCLUDE: c:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/SDK/ScopeCppSDK/SDK/include/ucrt
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -79,6 +73,12 @@ jobs:
         path: dist
 
   build_wheel_windows:
+    env:
+      VCVARS64: C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Auxiliary/Build/vcvars64.bat
+      #           C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat
+      # This is for avoiding the error like this:
+      # pyconfig.h(68): fatal error C1083: Cannot open include file: 'io.h': No such file or directory
+      INCLUDE: c:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/SDK/ScopeCppSDK/SDK/include/ucrt
     runs-on: windows-2019
     strategy:
       max-parallel: 4
@@ -122,7 +122,7 @@ jobs:
       - build_sdist
       #- build_wheel_linux
       - build_wheel_macos
-      - build_wheel_windows
+      # - build_wheel_windows
     runs-on: ubuntu-latest
     steps:
     - uses: actions/download-artifact@v1

@@ -142,12 +142,12 @@ cache:
 install:
   - pip install --upgrade pip
   - pip install -r requirements.txt
+  - pip install -r requirements-test.txt
   - pip install wheel
   - pip install twine
-  - pip install nose
   # coveralls
-  - pip install pytest
-  - pip install coveralls
+  # - pip install pytest
+  # - pip install coveralls
   # codecov
   # - pip install pytest-cov
   # - pip install codecov
