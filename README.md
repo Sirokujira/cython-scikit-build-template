@@ -7,6 +7,7 @@
 [![travisCI](https://img.shields.io/travis/sirokujira/cython-scikit-build-template.svg)](https://travis-ci.org/sirokujira/cython-scikit-build-template)
 [![CircleCI](https://circleci.com/gh/Sirokujira/cython-scikit-build-template.svg?style=svg)](https://circleci.com/gh/Sirokujira/cython-scikit-build-template)
 [![appveyor](https://ci.appveyor.com/api/projects/status/094vyvbr9r012ial?svg=true)](https://ci.appveyor.com/project/Sirokujira/cython-scikit-build-template)
+
 [![Build Status](https://sirokujira.visualstudio.com/scikit-build-template/_apis/build/status/Sirokujira.cython-scikit-build-template?branchName=master)](https://sirokujira.visualstudio.com/scikit-build-template/_build/latest?definitionId=3&branchName=master)
 
 [![Coverage](https://coveralls.io/repos/github/Sirokujira/cython-scikit-build-template/badge.svg?branch=master)](https://coveralls.io/github/Sirokujira/cython-scikit-build-template?branch=master)
