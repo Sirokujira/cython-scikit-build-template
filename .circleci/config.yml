@@ -11,14 +11,14 @@ jobs:
       #- python/load-cache
       #- python/install-deps
       #- python/save-cache
-    - run:
-        command: python -m pip install -r requirements.txt
+    run:
+      - command: python -m pip install -r requirements.txt
         name: Install
-    - run:
-        command: python setup.py build_ext -i
+    run:
+      - command: python setup.py build_ext -i
         name: build
-    - run:
-        command: |
+    run:
+      - command: |
             python -m pip install -r requirements-test.txt
             nosetests ./tests/test_rect.py --with-coverage
         name: Test

@@ -74,12 +74,12 @@ jobs:
       vmImage: 'vs2017-win2016'
     strategy:
       matrix:
-        x86_Python27:
-          PLATFORM: 'x86'
-          ARCHITECTURE: 'x86'
-          GENERATOR: 'Visual Studio 15 2017'
-          python.version: '2.7'
-          CMAKE_CXX_FLAGS: '-Wall -Wextra -Wabi -O2'
+        #x86_Python27:
+        #  PLATFORM: 'x86'
+        #  ARCHITECTURE: 'x86'
+        #  GENERATOR: 'Visual Studio 15 2017'
+        #  python.version: '2.7'
+        #  CMAKE_CXX_FLAGS: '-Wall -Wextra -Wabi -O2'
         x86_Python35:
           PLATFORM: 'x86'
           ARCHITECTURE: 'x86'
@@ -98,12 +98,12 @@ jobs:
           GENERATOR: 'Visual Studio 15 2017'
           python.version: '3.7'
           CMAKE_CXX_FLAGS: '-Wall -Wextra -Wabi -O2'
-        x64_Python27:
-          PLATFORM: 'x64'
-          ARCHITECTURE: 'x86_amd64'
-          GENERATOR: 'Visual Studio 15 2017 Win64'
-          python.version: '2.7'
-          CMAKE_CXX_FLAGS: '-Wall -Wextra -Wabi -O2'
+        #x64_Python27:
+        #  PLATFORM: 'x64'
+        #  ARCHITECTURE: 'x86_amd64'
+        #  GENERATOR: 'Visual Studio 15 2017 Win64'
+        #  python.version: '2.7'
+        #  CMAKE_CXX_FLAGS: '-Wall -Wextra -Wabi -O2'
         x64_Python35:
           PLATFORM: 'x64'
           ARCHITECTURE: 'x86_amd64'
@@ -149,8 +149,8 @@ jobs:
           rem rmdir %VCPKG_DIR%\packages /S /Q
         displayName: 'Free up space'
       - script: |
-          python setup.py build_ext -i
-          python setup.py install
+          python setup.py build_ext -i -G"%GENERATOR%"
+          python setup.py install -G"%GENERATOR%"
         displayName: 'Build Library'
       - script: nosetests ./tests/test_rect.py --with-coverage
         displayName: 'Run Unit Tests'
