@@ -102,7 +102,7 @@ build_script:
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2017" (call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64) & (set VS90COMNTOOLS=%VS150COMNTOOLS%)
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" (call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64) & (set VS90COMNTOOLS=%VS160COMNTOOLS%)
   - python setup.py build_ext -i -G"%CMAKE_GERENATOR%"
-  - python setup.py install -G"%CMAKE_GERENATOR%"
+  - python setup.py install
 
 
 test_script:
@@ -112,7 +112,7 @@ test_script:
 
 after_test:
   # If tests are successful, create binary packages for the project.
-  - python setup.py bdist_wheel -G"%CMAKE_GERENATOR%"
+  - python setup.py bdist_wheel
   - rem "%CMD_IN_ENV% python setup.py bdist_wininst"
   - rem "%CMD_IN_ENV% python setup.py bdist_msi"
   - ps: "ls dist"
