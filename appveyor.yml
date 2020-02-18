@@ -1,11 +1,11 @@
 # https://www.appveyor.com/docs/windows-images-software/
-os:
-  # vs2015
-  # - Windows Server 2012 R2
-  # vs2017
-  # - Windows Server 2016
-  # vs2019
-  # - Windows Server 2019
+#os:
+#  # vs2015
+#  # - Windows Server 2012 R2
+#  # vs2017
+#  # - Windows Server 2016
+#  # vs2019
+#  # - Windows Server 2019
 
 environment:
   global:
@@ -18,54 +18,63 @@ environment:
   matrix:
   - os: Windows Server 2012 R2
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    CMAKE_GERENATOR: 'Visual Studio 14 2015 Win64'
     PYTHON: "C:\\Miniconda35-x64"
     PYTHON_VERSION: "3.5"
     PYTHON_ARCH: "64"
 
   - os: Windows Server 2012 R2
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    CMAKE_GERENATOR: 'Visual Studio 14 2015 Win64'
     PYTHON: "C:\\Miniconda36-x64"
     PYTHON_VERSION: "3.6"
     PYTHON_ARCH: "64"
 
   - os: Windows Server 2016
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    CMAKE_GERENATOR: 'Visual Studio 15 2017 Win64'
     PYTHON: "C:\\Miniconda36-x64"
     PYTHON_VERSION: "3.6"
     PYTHON_ARCH: "64"
 
   - os: Windows Server 2012 R2
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    CMAKE_GERENATOR: 'Visual Studio 14 2015 Win64'
     PYTHON: "C:\\Miniconda37-x64"
     PYTHON_VERSION: "3.7"
     PYTHON_ARCH: "64"
 
   - os: Windows Server 2016
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    CMAKE_GERENATOR: 'Visual Studio 15 2017 Win64'
     PYTHON: "C:\\Miniconda37-x64"
     PYTHON_VERSION: "3.7"
     PYTHON_ARCH: "64"
 
   - os: Windows Server 2019
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+    CMAKE_GERENATOR: 'Visual Studio 16 2019 Win64'
     PYTHON: "C:\\Miniconda37-x64"
     PYTHON_VERSION: "3.7"
     PYTHON_ARCH: "64"
 
   - os: Windows Server 2012 R2
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    CMAKE_GERENATOR: 'Visual Studio 14 2015 Win64'
     PYTHON: "C:\\Miniconda38-x64"
     PYTHON_VERSION: "3.8"
     PYTHON_ARCH: "64"
 
   - os: Windows Server 2016
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    CMAKE_GERENATOR: 'Visual Studio 15 2017 Win64'
     PYTHON: "C:\\Miniconda38-x64"
     PYTHON_VERSION: "3.8"
     PYTHON_ARCH: "64"
 
   - os: Windows Server 2019
     APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+    CMAKE_GERENATOR: 'Visual Studio 16 2019 Win64'
     PYTHON: "C:\\Miniconda38-x64"
     PYTHON_VERSION: "3.8"
     PYTHON_ARCH: "64"
@@ -92,8 +101,8 @@ build_script:
   # build use setup.py
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2017" (call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64) & (set VS90COMNTOOLS=%VS150COMNTOOLS%)
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" (call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64) & (set VS90COMNTOOLS=%VS160COMNTOOLS%)
-  - python setup.py build_ext -i -G"Ninja"
-  - python setup.py install -G"Ninja"
+  - python setup.py build_ext -i -G"%GENERATOR%"
+  - python setup.py install -G"%GENERATOR%"
 
 
 test_script:
@@ -103,7 +112,7 @@ test_script:
 
 after_test:
   # If tests are successful, create binary packages for the project.
-  - python setup.py bdist_wheel"
+  - python setup.py bdist_wheel -G"%GENERATOR%"
   - rem "%CMD_IN_ENV% python setup.py bdist_wininst"
   - rem "%CMD_IN_ENV% python setup.py bdist_msi"
   - ps: "ls dist"
