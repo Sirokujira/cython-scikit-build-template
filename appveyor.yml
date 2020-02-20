@@ -58,27 +58,6 @@ environment:
     PYTHON_VERSION: "3.7"
     PYTHON_ARCH: "64"
 
-  - os: Windows Server 2012 R2
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    CMAKE_GERENATOR: 'Visual Studio 14 2015 Win64'
-    PYTHON: "C:\\Miniconda38-x64"
-    PYTHON_VERSION: "3.8"
-    PYTHON_ARCH: "64"
-
-  - os: Windows Server 2016
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    CMAKE_GERENATOR: 'Visual Studio 15 2017 Win64'
-    PYTHON: "C:\\Miniconda38-x64"
-    PYTHON_VERSION: "3.8"
-    PYTHON_ARCH: "64"
-
-  - os: Windows Server 2019
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
-    CMAKE_GERENATOR: 'Visual Studio 16 2019 Win64'
-    PYTHON: "C:\\Miniconda38-x64"
-    PYTHON_VERSION: "3.8"
-    PYTHON_ARCH: "64"
-
     # matrix:
     #   exclude:
     #     - os: Windows Server 2012 R2
@@ -102,8 +81,8 @@ build_script:
   # build use setup.py
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2017" (call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64) & (set VS140COMNTOOLS=%VS150COMNTOOLS%)
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" (call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64) & (set VS140COMNTOOLS=%VS160COMNTOOLS%)
-  - "%PYTHON%/python.exe setup.py build_ext -i -G%CMAKE_GERENATOR%"
-  - "%PYTHON%/python.exe setup.py install -G%CMAKE_GERENATOR%"
+  - "%PYTHON%/python.exe setup.py build_ext -i"
+  - "%PYTHON%/python.exe setup.py install"
 
 
 test_script:
@@ -113,7 +92,7 @@ test_script:
 
 after_test:
   # If tests are successful, create binary packages for the project.
-  - "%PYTHON%/python.exe setup.py bdist_wheel -G%CMAKE_GERENATOR%"
+  - "%PYTHON%/python.exe setup.py bdist_wheel"
   - rem "%CMD_IN_ENV% %PYTHON%/python.exe setup.py bdist_wininst"
   - rem "%CMD_IN_ENV% %PYTHON%/python.exe setup.py bdist_msi"
   - ps: "ls dist"
