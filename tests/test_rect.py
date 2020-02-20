@@ -1,5 +1,5 @@
 from unittest import TestCase
-from nose.tools import assert_equal
+from nose2.tools import assert_equal
 
 from temp.rect import Rectangle
 
