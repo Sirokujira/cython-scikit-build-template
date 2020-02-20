@@ -168,7 +168,7 @@ script:
   # - coverage run --parallel-mode tests/pi_calculator_test.py
   # - coverage run --parallel-mode tests/rect_test.py
   # - nose2 --with-coverage --cover-erase --cover-package=scikit-build-template --verbose
-  - nose2 ./tests/test_rect.py --with-coverage
+  - nose2 --with-coverage
   # - py.test --cov pcl
   # examples
   # - python examples/CallTest.py
