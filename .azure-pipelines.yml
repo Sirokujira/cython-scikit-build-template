@@ -31,7 +31,7 @@ jobs:
           python setup.py build_ext -i
           python setup.py install
         displayName: 'Build Library'
-      - script: nose2 ./tests/test_rect.py --with-coverage
+      - script: nose2 --with-coverage
         displayName: 'Run Unit Tests'
   - job: osx
     displayName: macOS High Sierra
@@ -65,7 +65,7 @@ jobs:
           python setup.py build_ext -i
           python setup.py install
         displayName: 'Build Library'
-      - script: nose2 ./tests/test_rect.py --with-coverage
+      - script: nose2 --with-coverage
         displayName: 'Run Unit Tests'
   #- job: vs2017
   #  displayName: Windows VS2017 Build
@@ -152,5 +152,5 @@ jobs:
   #        python setup.py build_ext -i -G"%GENERATOR%"
   #        python setup.py install -G"%GENERATOR%"
   #      displayName: 'Build Library'
-  #    - script: nose2 ./tests/test_rect.py --with-coverage
+  #    - script: nose2 --with-coverage
   #      displayName: 'Run Unit Tests'

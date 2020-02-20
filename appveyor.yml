@@ -102,14 +102,14 @@ build_script:
   # build use setup.py
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2017" (call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64) & (set VS140COMNTOOLS=%VS150COMNTOOLS%)
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" (call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64) & (set VS140COMNTOOLS=%VS160COMNTOOLS%)
-  - "%PYTHON%/python.exe setup.py build_ext -i -G¥"%CMAKE_GERENATOR%¥""
-  - "%PYTHON%/python.exe setup.py install -G¥"%CMAKE_GERENATOR%¥""
+  - "%PYTHON%/python.exe setup.py build_ext -i -G%CMAKE_GERENATOR%"
+  - "%PYTHON%/python.exe setup.py install -G%CMAKE_GERENATOR%"
 
 
 test_script:
   # - nose2 -A "%NOSEATTR%" --verbose
   # - nose2 --verbose
-  - nose2 ./tests/test_rect.py --with-coverage
+  - nose2 --with-coverage
 
 after_test:
   # If tests are successful, create binary packages for the project.

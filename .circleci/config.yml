@@ -20,7 +20,7 @@ jobs:
       - run:
           command: |
             python -m pip install -r requirements-test.txt
-            nosetests ./tests/test_rect.py --with-coverage
+            nose2 --with-coverage
           name: Test
 
 workflows:
