@@ -10,8 +10,8 @@ jobs:
       matrix:
         # platform: [ubuntu-latest, macos-latest, windows-2019]
         platform: [ubuntu-latest, macos-latest]
-        #python-version: [3.5, 3.6, 3.7, 3.8]
-        python-version: [3.6, 3.7, 3.8]
+        python-version: [3.5, 3.6, 3.7, 3.8]
+        #python-version: [3.6, 3.7, 3.8]
 
     steps:
     - uses: actions/checkout@master
@@ -32,7 +32,7 @@ jobs:
         python -m pip install -r requirements.txt
         python -m pip install tox tox-gh-actions
     - name: build dependencies(other)
-      run: python setup.py build_ext -i
+      run: python setup.py develop
       if: "!startsWith(matrix.platform, 'windows-')"
     - uses: ilammy/msvc-dev-cmd@v1
       with:
@@ -42,9 +42,9 @@ jobs:
     - name: build dependencies(win)
       run: |
         choco install windows-sdk-10.0
-        python setup.py build_ext -i -G "NMake Makefiles"
+        python setup.py develop -G "NMake Makefiles"
       if: "startsWith(matrix.platform, 'windows-')"    
-    # python setup.py build_ext -i
+    # python setup.py develop
     #- name: Lint with flake8
     #  run: |
     #    python -m pip install -r requirements-codecheck.txt -q
