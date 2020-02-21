@@ -28,7 +28,8 @@ MOD_NAMES = [
 import platform
 if platform.system() == 'Windows':
     #https://stackoverflow.com/questions/31262342/cmake-g-ninja-on-windows-specify-x64
-    CMAKE_ARGS=['-DCMAKE_C_COMPILER=cl.exe', '-DCMAKE_CXX_COMPILER=cl.exe', '-DMSVC_TOOLSET_VERSION=140']
+    #CMAKE_ARGS=['-DCMAKE_C_COMPILER=cl.exe', '-DCMAKE_CXX_COMPILER=cl.exe', '-DMSVC_TOOLSET_VERSION=140']
+    CMAKE_ARGS=['-DCMAKE_C_COMPILER=cl.exe', '-DCMAKE_CXX_COMPILER=cl.exe']
 elif platform.system() == 'Darwin':
     CMAKE_ARGS=['-DCMAKE_C_COMPILER=clang', '-DCMAKE_CXX_COMPILER=clang++']
 else:
