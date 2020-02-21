@@ -79,10 +79,12 @@ build_script:
   # - conda install -y -q Cython
   # - conda install -y -q numpy
   # build use setup.py
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2015" (call "C:\Program Files (x86)\Microsoft Visual Studio\2015\Community\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64)
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2017" (call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64) & (set VS140COMNTOOLS=%VS150COMNTOOLS%)
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" (call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64) & (set VS140COMNTOOLS=%VS160COMNTOOLS%)
-  - "%PYTHON%/python.exe setup.py develop"
-  - "%PYTHON%/python.exe setup.py install"
+  #- "%PYTHON%/python.exe setup.py develop"
+  - "%PYTHON%/python.exe setup.py develop '%CMAKE_GERENATOR%'"
+  - "%PYTHON%/python.exe setup.py install '%CMAKE_GERENATOR%'"
 
 
 test_script:

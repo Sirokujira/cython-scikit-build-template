@@ -154,7 +154,7 @@ install:
   # - pip install codecov
 
   - if [ ${TRAVIS_OS_NAME} = "osx" ]; then
-      python setup.py develop --plat-name macosx-10.9-x86_64;
+      python setup.py develop;
       python setup.py bdist_wheel --plat-name macosx-10.9-x86_64;
     else
       python setup.py develop;
