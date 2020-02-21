@@ -16,12 +16,6 @@
 [![Read the Docs](https://readthedocs.org/projects/cython-scikit-build-template/badge/?version=latest)](https://cython-scikit-build-template.readthedocs.io/en/latest/?badge=latest)
 
 
-[**Website**](https://cython-scikit-build-template.template.org/)
-| [**Docs**](https://cython-scikit-build-template.template.org/en/stable/)
-| [**Install Guide**](https://cython-scikit-build-template.template.org/en/stable/install.html)
-| [**Tutorial**](https://cython-scikit-build-template.template.org/en/stable/tutorial/)
-| **Examples** ([Official](https://github.com/sirokujira/template/tree/master/examples))
-
 *template* is an implementation of .
 template consists、 `temp.rect`.
 

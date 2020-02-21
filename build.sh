@@ -1,3 +1,4 @@
+#!/bin/bash
 # before install package
 pip install -r requirements.txt
 # build source code

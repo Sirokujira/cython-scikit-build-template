@@ -28,7 +28,7 @@ jobs:
           pip install -r requirements-test.txt
         displayName: 'Install Dependencies'
       - script: |
-          python setup.py build_ext -i
+          python setup.py develop
           python setup.py install
         displayName: 'Build Library'
       - script: nose2 --with-coverage
@@ -62,7 +62,7 @@ jobs:
           pip install -r requirements-test.txt
         displayName: 'Install Dependencies'
       - script: |
-          python setup.py build_ext -i
+          python setup.py develop
           python setup.py install
         displayName: 'Build Library'
       - script: nose2 --with-coverage
@@ -149,7 +149,7 @@ jobs:
   #        rem rmdir %VCPKG_DIR%\packages /S /Q
   #      displayName: 'Free up space'
   #    - script: |
-  #        python setup.py build_ext -i -G"%GENERATOR%"
+  #        python setup.py develop -G"%GENERATOR%"
   #        python setup.py install -G"%GENERATOR%"
   #      displayName: 'Build Library'
   #    - script: nose2 --with-coverage
@@ -164,7 +164,7 @@ jobs:
     strategy:
       matrix:
         x86_Python35:
-         PLATFORM: 'x86'
+          PLATFORM: 'x86'
           ARCHITECTURE: 'x86'
           GENERATOR: 'Visual Studio 14 2015'
           python.version: '3.5'
@@ -226,7 +226,7 @@ jobs:
           rem rmdir %VCPKG_DIR%\packages /S /Q
         displayName: 'Free up space'
       - script: |
-          python setup.py build_ext -i -G"%GENERATOR%"
+          python setup.py develop -G"%GENERATOR%"
           python setup.py install -G"%GENERATOR%"
         displayName: 'Build Library'
       - script: nose2 --with-coverage

@@ -15,7 +15,7 @@ jobs:
           command: python -m pip install -r requirements.txt
           name: Install
       - run:
-          command: python setup.py build_ext -i
+          command: python setup.py develop
           name: build
       - run:
           command: |
