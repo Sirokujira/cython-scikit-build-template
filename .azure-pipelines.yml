@@ -206,10 +206,11 @@ jobs:
       CONFIGURATION: 'Release'
     steps:
       - template: azure-pipelines/windows-install-ninja.yml
-      #- task: UsePythonVersion@0
-      #  inputs:
-      #    versionSpec: '$(python.version)'
-      #    architecture: 'x64'
+      #https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/tool/use-python-version?view=azure-devops
+      - task: UsePythonVersion@0
+        inputs:
+          versionSpec: '$(python.version)'
+          architecture: '$(PLATFORM)'
       #- script: |
       #    git clone https://github.com/microsoft/vcpkg --depth 1 %VCPKG_DIR%
       #    echo.set(VCPKG_BUILD_TYPE release)>> %VCPKG_DIR%\triplets\%PLATFORM%-windows.cmake
