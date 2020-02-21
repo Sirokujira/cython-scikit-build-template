@@ -37,7 +37,7 @@ jobs:
     displayName: macOS High Sierra
     timeoutInMinutes: 0
     pool:
-      vmImage: 'macOS-10.13'
+      vmImage: 'macOS-10.14'
     strategy:
       matrix:
         Python27:
@@ -160,7 +160,8 @@ jobs:
     displayName: Windows VS2015 Build
     timeoutInMinutes: 0
     pool:
-      vmImage: 'vs2015-win2012r2'
+      #vmImage: 'vs2015-win2012r2'
+      vs2017-win2016
     strategy:
       matrix:
         x86_Python35:
@@ -200,9 +201,10 @@ jobs:
           python.version: '3.7'
           CMAKE_CXX_FLAGS: '-Wall -Wextra -Wabi -O2'
     variables:
-      BUILD_DIR: '$(Agent.WorkFolder)\build'
-      VCPKG_DIR: '$(Agent.WorkFolder)\vcpkg'
-      VCVARSALL: '%ProgramFiles(x86)%\Microsoft Visual Studio\2015\Enterprise\VC\Auxiliary\Build\vcvarsall.bat'
+      #BUILD_DIR: '$(Agent.WorkFolder)\build'
+      #VCPKG_DIR: '$(Agent.WorkFolder)\vcpkg'
+      VCVARSALL: '%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\VC\vcvarsall.bat'
+      # \VC\bin\amd64\\\
       CONFIGURATION: 'Release'
     steps:
       - template: azure-pipelines/windows-install-ninja.yml

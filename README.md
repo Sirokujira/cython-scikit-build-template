@@ -45,6 +45,10 @@ Please see [the contribution guide](https://cython-scikit-build-template.templat
 
 MIT License (see `LICENSE` file).
 
+## jupyter notebook
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Sirokujira/cython-scikit-build-template/master)
+
 ## Reference
 
 # reference source github
