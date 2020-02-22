@@ -164,12 +164,12 @@ jobs:
       vmImage: 'vs2017-win2016'
     strategy:
       matrix:
-        x86_Python35:
-          PLATFORM: 'x86'
-          ARCHITECTURE: 'x86'
-          GENERATOR: 'Visual Studio 14 2017'
-          python.version: '3.5'
-          CMAKE_CXX_FLAGS: '-Wall -Wextra -Wabi -O2'
+        #x86_Python35:
+        #  PLATFORM: 'x86'
+        #  ARCHITECTURE: 'x86'
+        #  GENERATOR: 'Visual Studio 14 2017'
+        #  python.version: '3.5'
+        #  CMAKE_CXX_FLAGS: '-Wall -Wextra -Wabi -O2'
         x86_Python36:
           PLATFORM: 'x86'
           ARCHITECTURE: 'x86'
@@ -182,13 +182,13 @@ jobs:
           GENERATOR: 'Visual Studio 15 2017'
           python.version: '3.7'
           CMAKE_CXX_FLAGS: '-Wall -Wextra -Wabi -O2'
-        x64_Python35:
-          PLATFORM: 'x64'
-          ARCHITECTURE: 'x86_amd64'
-          GENERATOR: 'Visual Studio 14 2017 Win64'
-          python.version: '3.5'
-          CMAKE_CXX_FLAGS: '-Wall -Wextra -Wabi -O2'
-          VCVARSALL: '%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\VC\vcvarsall.bat'
+        #x64_Python35:
+        #  PLATFORM: 'x64'
+        #  ARCHITECTURE: 'x86_amd64'
+        #  GENERATOR: 'Visual Studio 14 2017 Win64'
+        #  python.version: '3.5'
+        #  CMAKE_CXX_FLAGS: '-Wall -Wextra -Wabi -O2'
+        #  VCVARSALL: '%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\VC\vcvarsall.bat'
         x64_Python36:
           PLATFORM: 'x64'
           ARCHITECTURE: 'x86_amd64'
