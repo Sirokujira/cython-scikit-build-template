@@ -38,7 +38,7 @@ else:
 setup(name='scikit-build-template',
       description='cython cmake template modules',
       url='http://github.com/sirokujira/cython-cmake-template',
-      version='0.0.1dev',
+      version='0.0.1.dev0',
       # check github tag version
       use_scm_version=False,
       setup_requires=setup_requires,

@@ -15,7 +15,9 @@ jobs:
           command: python -m pip install -r requirements.txt
           name: Install
       - run:
-          command: python setup.py develop
+          # [Errno 13] Permission denied
+          #command: python setup.py develop
+          command: python setup.py build_ext -i
           name: build
       - run:
           command: |
