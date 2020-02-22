@@ -167,7 +167,7 @@ jobs:
         x86_Python35:
           PLATFORM: 'x86'
           ARCHITECTURE: 'x86'
-          GENERATOR: 'Visual Studio 14 2015'
+          GENERATOR: 'Visual Studio 14 2017'
           python.version: '3.5'
           CMAKE_CXX_FLAGS: '-Wall -Wextra -Wabi -O2'
         x86_Python36:
@@ -185,7 +185,7 @@ jobs:
         x64_Python35:
           PLATFORM: 'x64'
           ARCHITECTURE: 'x86_amd64'
-          GENERATOR: 'Visual Studio 14 2015 Win64'
+          GENERATOR: 'Visual Studio 14 2017 Win64'
           python.version: '3.5'
           CMAKE_CXX_FLAGS: '-Wall -Wextra -Wabi -O2'
           VCVARSALL: '%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\VC\vcvarsall.bat'
