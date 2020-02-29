@@ -85,7 +85,7 @@ build_script:
   - "%PYTHON%/python.exe setup.py develop"
   #- "%PYTHON%/python.exe setup.py develop -G=""%CMAKE_GERENATOR%"""
   #- "%PYTHON%/python.exe setup.py install -G=""%CMAKE_GERENATOR%"""
-  - "%PYTHON%/python.exe setup.py install"
+  #- "%PYTHON%/python.exe setup.py install"
 
 
 test_script:
