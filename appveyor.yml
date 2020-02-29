@@ -67,6 +67,8 @@ environment:
     #   fast_finish: true
 
 install:
+  - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
+  #- "SET PYTHONPATH=%PYTHONPATH%;%CD%"
   - "%PYTHON%/python.exe -m pip install --upgrade pip"
   - "%PYTHON%/python.exe -m pip install -r requirements.txt"
   - "%PYTHON%/python.exe -m pip install -r requirements-test.txt"
