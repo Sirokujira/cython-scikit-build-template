@@ -51,12 +51,12 @@ environment:
     PYTHON_VERSION: "3.7"
     PYTHON_ARCH: "64"
 
-  - os: Windows Server 2019
-    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
-    CMAKE_GERENATOR: 'Visual Studio 16 2019 Win64'
-    PYTHON: "C:\\Miniconda37-x64"
-    PYTHON_VERSION: "3.7"
-    PYTHON_ARCH: "64"
+  #- os: Windows Server 2019
+  #  APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+  #  CMAKE_GERENATOR: 'Visual Studio 16 2019 Win64'
+  #  PYTHON: "C:\\Miniconda37-x64"
+  #  PYTHON_VERSION: "3.7"
+  #  PYTHON_ARCH: "64"
 
     # matrix:
     #   exclude:
