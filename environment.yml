@@ -12,7 +12,7 @@ dependencies:
   - doxygen
   - scikit-build
   - cmake>=3.13
-  - sphinx-rtd-theme
+  #- sphinx-rtd-theme
   # - pip:
   #   - scikit-build
   #   - cmake>=3.13.3
