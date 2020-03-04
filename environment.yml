@@ -10,20 +10,14 @@ dependencies:
   # 2.1.x exhale ng?
   - Sphinx==2.0
   - doxygen
-  # - boost-cpp
-  # - eigen
-  # - flann=1.9.1
-  # - qhull=2015.2
-  # - vtk=8.2.0
-  # - mesalib
-  # - glfw
-  # - freeglut
-  # - mesa-libgl-cos6-x86_64
-  - pip:
-    - scikit-build
-    - cmake>=3.13.3
-    # breathe extension(Automatic C++ library API documentation generator)
-    # - breathe>=4.13.0
-    # - exhale
-    - sphinx-rtd-theme
+  - scikit-build
+  - cmake>=3.13
+  - sphinx-rtd-theme
+  # - pip:
+  #   - scikit-build
+  #   - cmake>=3.13.3
+  #   # breathe extension(Automatic C++ library API documentation generator)
+  #   # - breathe>=4.13.0
+  #   # - exhale
+  #   - sphinx-rtd-theme
     
