@@ -6,3 +6,4 @@ cmake
 Cython>=0.25.2
 numpy
 scikit-build
+setuptools_scm

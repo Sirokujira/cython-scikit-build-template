@@ -13,10 +13,12 @@ dependencies:
   - scikit-build
   - cmake>=3.13
   - numpy>=1.15
+  - setuptools_scm
   #- sphinx-rtd-theme
   # - pip:
   #   - scikit-build
   #   - cmake>=3.13.3
+  #   - setuptools_scm
   #   # breathe extension(Automatic C++ library API documentation generator)
   #   # - breathe>=4.13.0
   #   # - exhale
