@@ -7,8 +7,8 @@
 [![travisCI](https://img.shields.io/travis/sirokujira/cython-scikit-build-template.svg)](https://travis-ci.org/sirokujira/cython-scikit-build-template)
 [![CircleCI](https://circleci.com/gh/Sirokujira/cython-scikit-build-template.svg?style=svg)](https://circleci.com/gh/Sirokujira/cython-scikit-build-template)
 [![appveyor](https://ci.appveyor.com/api/projects/status/094vyvbr9r012ial?svg=true)](https://ci.appveyor.com/project/Sirokujira/cython-scikit-build-template)
+[![Azure pipeline](https://dev.azure.com/sirokujira/scikit-build-template/_apis/build/status/scikit-build-template?branchName=master)](https://dev.azure.com/sirokujira/scikit-build-template/_build/latest?definitionId=4&branchName=master)
 
-[![Build Status](https://dev.azure.com/sirokujira/scikit-build-template/_apis/build/status/scikit-build-template?branchName=master)](https://dev.azure.com/sirokujira/scikit-build-template/_build/latest?definitionId=4&branchName=master)
 
 [![Coverage](https://coveralls.io/repos/github/Sirokujira/cython-scikit-build-template/badge.svg?branch=master)](https://coveralls.io/github/Sirokujira/cython-scikit-build-template?branch=master)
 [![codecov](https://codecov.io/gh/Sirokujira/cython-scikit-build-template/branch/master/graph/badge.svg)](https://codecov.io/gh/Sirokujira/cython-scikit-build-template)

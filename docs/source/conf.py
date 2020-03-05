@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# pcl documentation build configuration file, created by
+# scikit-build-template documentation build configuration file, created by
 # sphinx-quickstart on Mon Jul 31 16:25:14 2017.
 #
 # This file is execfile()d with the current directory set to its
@@ -21,13 +21,13 @@ import sys
 
 # use markdown
 # https://docs.readthedocs.io/en/latest/intro/getting-started-with-sphinx.html
-from recommonmark.parser import CommonMarkParser
-source_parsers = {
-    '.md': CommonMarkParser,
-}
+# from recommonmark.parser import CommonMarkParser
+# source_parsers = {
+#     '.md': CommonMarkParser,
+# }
 
 # Read the Docs
-__version__ = pkg_resources.get_distribution('template').version
+__version__ = pkg_resources.get_distribution('scikit-build-template').version
 # __version__ = '0.3'
 
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
@@ -68,8 +68,8 @@ templates_path = ['_templates']
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
-source_suffix = ['.rst', '.md']
-# source_suffix = '.rst'
+# source_suffix = ['.rst', '.md']
+source_suffix = '.rst'
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
@@ -78,8 +78,8 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # General information about the project.
-project = u'template'
-copyright = u'2018, Tooru Oonuma.'
+project = u'scikit-build-template'
+copyright = u'2020, Tooru Oonuma.'
 author = u'Tooru Oonuma'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -249,7 +249,7 @@ if on_rtd:
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'pcldoc'
+htmlhelp_basename = 'templatedoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -271,7 +271,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'pcl.tex', u'template Documentation',
+    (master_doc, 'scikit-build-template.tex', u'scikit-build-template Documentation',
      u'Tooru Oonuma', 'manual'),
 ]
 
@@ -301,7 +301,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'template', u'template Documentation',
+    (master_doc, 'scikit-build-template',
+     u'scikit-build-template Documentation',
      [author], 1)
 ]
 
@@ -315,8 +316,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'template', u'template Documentation',
-     author, 'template', 'One line description of project.',
+    (master_doc, 'scikit-build-template', u'template Documentation',
+     author, 'scikit-build-template', 'One line description of project.',
      'Miscellaneous'),
 ]
 
@@ -341,7 +342,7 @@ intersphinx_mapping = {
 
 doctest_global_setup = '''
 import numpy as np
-import pcl # TODO : Remove this line
+import temp # TODO : Remove this line
 np.random.seed(0)
 '''
 
@@ -392,5 +393,5 @@ def linkcode_resolve(domain, info):
         return None
     relpath = os.path.relpath(filename, repo_root_dir)
 
-    return 'https://github.com/Sirokujira/cython-cmake-template/blob/{}/{}#L{}'.format(
+    return 'https://github.com/Sirokujira/cython-scikit-build-template/blob/{}/{}#L{}'.format(
         tag, relpath, linenum)
