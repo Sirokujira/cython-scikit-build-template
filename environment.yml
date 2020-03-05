@@ -10,6 +10,7 @@ dependencies:
   # 2.1.x exhale ng?
   - Sphinx==2.0
   - doxygen
+  - Cython>=0.25.2
   - scikit-build
   - cmake>=3.13
   - numpy>=1.15

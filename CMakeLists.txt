@@ -38,6 +38,13 @@ find_package(NumPy REQUIRED)
 # message(STATUS ${NumPy_FOUND})
 # message(STATUS ${NumPy_INCLUDE_DIRS})
 # message(STATUS ${NumPy_VERSION})
+# numpy<1.15 is from-template and conv-template are not declared as entry points.
+# https://scikit-build.readthedocs.io/en/latest/cmake-modules/NumPy.html
+# set(NumPy_CONV_TEMPLATE_EXECUTABLE /path/to/python /path/to/site-packages/numpy/distutils/conv_template.py CACHE STRING "Command executing conv-template program" FORCE)
+# set(NumPy_FROM_TEMPLATE_EXECUTABLE /path/to/python /path/to/site-packages/numpy/distutils/from_template.py CACHE STRING "Command executing from-template program" FORCE)
+# message(STATUS ${NumPy_CONV_TEMPLATE_EXECUTABLE})
+# message(STATUS ${NumPy_FROM_TEMPLATE_EXECUTABLE})
+
 list(APPEND EXTERNAL_PKG_INCLUDE ${NumPy_INCLUDE_DIRS})
 
 # examples defines
