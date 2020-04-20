@@ -12,13 +12,14 @@ dependencies:
   - doxygen
   - Cython>=0.25.2
   - scikit-build
-  - cmake>=3.13
+  - cmake
   - numpy>=1.15
   - setuptools_scm
   #- sphinx-rtd-theme
-  # - pip:
+  - pip
+  - pip:
   #   - scikit-build
-  #   - cmake>=3.13.3
+    - cmake>=3.13
   #   - setuptools_scm
   #   # breathe extension(Automatic C++ library API documentation generator)
   #   # - breathe>=4.13.0
