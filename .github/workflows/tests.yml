@@ -77,7 +77,7 @@ jobs:
         #nose2 --with-cov --cov-config .coveragerc
         nose2 --with-coverage
         #nose2 --with-cov --cov-report xml --cov-report annotate
-        coverage run tests.py
+        #coverage run tests.py
         coverage xml
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
