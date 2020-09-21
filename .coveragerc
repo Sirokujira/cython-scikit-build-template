@@ -5,7 +5,7 @@ omit =
     setup.py
     style_checker.py
     sys_path_check.py
-source = django
+source = tests
 
 [report] 
 ignore_errors = True
