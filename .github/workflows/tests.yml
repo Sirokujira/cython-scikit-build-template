@@ -73,10 +73,9 @@ jobs:
     #    path: htmlcov
   coverage:
     needs: [ test ]
-    name: Generate coverage report
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+    - name: Generate coverage report
       run: |
         python -m pip install -r requirements-test.txt -q
         #nose2 --with-cov --cov-config .coveragerc
@@ -84,15 +83,15 @@ jobs:
         #nose2 --with-cov --cov-report xml --cov-report annotate
         #coverage run tests.py
         coverage xml
-      - uses: codecov/codecov-action@v1
-        name: Upload coverage to Codecov
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: ./coverage.xml
           flags: unittests
           name: codecov-umbrella
           fail_ci_if_error: true
-    #uses: paambaati/codeclimate-action@v2.5.7
+    #- uses: paambaati/codeclimate-action@v2.5.7
     #  env: 
     #    CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_TOKEN }}
     #  with: 
