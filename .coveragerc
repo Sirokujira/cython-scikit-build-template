@@ -1,8 +1,14 @@
 [run]
-omit = tests/*
-       setup.py
-       style_checker.py
-       sys_path_check.py
+branch = True
+omit = 
+    temp/*
+    setup.py
+    style_checker.py
+    sys_path_check.py
+source = django
+
+[report] 
+ignore_errors = True
 
 [xml]
 output = coverage.xml
