@@ -74,8 +74,9 @@ jobs:
     - name: Generate coverage report
       run: |
         python -m pip install -r requirements-test.txt -q
-        nose2 --with-coverage --cov-config .coveragerc
+        #nose2 --with-cov --cov-config .coveragerc
         #nose2 --with-coverage
+        nose2 --with-cov --cov-report xml --cov-report annotate
         coverage xml
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
