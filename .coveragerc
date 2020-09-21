@@ -5,4 +5,4 @@ omit = tests/*
        sys_path_check.py
 
 [xml]
-directory = .
+output = coverage.xml
