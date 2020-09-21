@@ -74,8 +74,7 @@ jobs:
     - name: Generate coverage report
       run: |
         python -m pip install -r requirements-test.txt -q
-        nose2 --with-cov --cov-config .coveragerc
-        coverage xml
+        nose2 --with-coverage --cov-config .coveragerc --cov-report annotate
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
       with:
@@ -83,5 +82,5 @@ jobs:
         file: ./coverage.xml
         flags: unittests
         name: codecov-umbrella
-        yml: ./codecov.yml
+        yml: .codecov.yml
         fail_ci_if_error: true

@@ -1,2 +1,8 @@
 [run]
 omit = tests/*
+       setup.py
+       style_checker.py
+       sys_path_check.py
+
+[xml]
+directory = .
