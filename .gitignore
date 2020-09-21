@@ -12,7 +12,6 @@ _skbuild/
 
 # custom
 check_autopep8
-.coveragerc
 
 # https://raw.githubusercontent.com/github/gitignore/master/CMake.gitignore
 CMakeCache.txt

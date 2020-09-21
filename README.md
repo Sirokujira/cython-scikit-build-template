@@ -38,8 +38,8 @@ Please see [the contribution guide](https://cython-scikit-build-template.templat
 
 ## More information
 
-- [Release notes](https://github.com/sirokujira/e/releases)
-- [Projects using template](https://github.com/sirokujira/e/wiki/Projects-using-template)
+- [Release notes](https://github.com/sirokujira/cython-scikit-build-template/releases)
+- [Projects using template](https://github.com/sirokujira/cython-scikit-build-template/wiki/Projects-using-template)
 
 ## License
 
