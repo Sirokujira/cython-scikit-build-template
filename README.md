@@ -13,6 +13,7 @@
 [![Coverage](https://coveralls.io/repos/github/Sirokujira/cython-scikit-build-template/badge.svg?branch=master)](https://coveralls.io/github/Sirokujira/cython-scikit-build-template?branch=master)
 [![codecov](https://codecov.io/gh/Sirokujira/cython-scikit-build-template/branch/master/graph/badge.svg)](https://codecov.io/gh/Sirokujira/cython-scikit-build-template)
 
+
 [![Read the Docs](https://readthedocs.org/projects/cython-scikit-build-template/badge/?version=latest)](https://cython-scikit-build-template.readthedocs.io/en/latest/?badge=latest)
 
 
@@ -76,6 +77,8 @@ MIT License (see `LICENSE` file).
 * coveralls : https://coveralls.io/
 
 * codecov : https://codecov.io/
+
+* codeclimate : https://codeclimate.com/
 
 # doc
 
