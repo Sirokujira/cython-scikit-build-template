@@ -67,7 +67,10 @@ setup(name='scikit-build-template',
           'Programming Language :: Python :: Implementation :: CPython',
           'Programming Language :: Python :: Implementation :: PyPy'
       ],
+      # use nose2
       tests_require=['mock', 'nose'],
+      test_suite='nose2.collector.collector',
+      # use pytest?
       #tests_require=['pytest'],
-      test_suite='tests'
+      #test_suite='tests'
 )

@@ -75,6 +75,12 @@ MIT License (see `LICENSE` file).
 
 # Test
 
+* nose2 : https://docs.nose2.io/en/latest/usage.html
+
+* pytest : https://docs.pytest.org/en/stable/customize.html
+
+# Coverage
+
 * coveralls : https://coveralls.io/
 
 * codecov : https://codecov.io/
