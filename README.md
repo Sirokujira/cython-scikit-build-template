@@ -9,9 +9,11 @@
 [![appveyor](https://ci.appveyor.com/api/projects/status/094vyvbr9r012ial?svg=true)](https://ci.appveyor.com/project/Sirokujira/cython-scikit-build-template)
 [![Azure pipeline](https://dev.azure.com/sirokujira/scikit-build-template/_apis/build/status/scikit-build-template?branchName=master)](https://dev.azure.com/sirokujira/scikit-build-template/_build/latest?definitionId=4&branchName=master)
 
-
 [![Coverage](https://coveralls.io/repos/github/Sirokujira/cython-scikit-build-template/badge.svg?branch=master)](https://coveralls.io/github/Sirokujira/cython-scikit-build-template?branch=master)
 [![codecov](https://codecov.io/gh/Sirokujira/cython-scikit-build-template/branch/master/graph/badge.svg)](https://codecov.io/gh/Sirokujira/cython-scikit-build-template)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/cbc9bab93741dc329cb7/maintainability)](https://codeclimate.com/github/Sirokujira/cython-scikit-build-template/maintainability)
+
 
 [![Read the Docs](https://readthedocs.org/projects/cython-scikit-build-template/badge/?version=latest)](https://cython-scikit-build-template.readthedocs.io/en/latest/?badge=latest)
 
