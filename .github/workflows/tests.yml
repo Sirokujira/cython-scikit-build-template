@@ -43,8 +43,8 @@ jobs:
     - name: build dependencies(win)
       run: |
         choco install windows-sdk-10.0
-        #python setup.py develop -G "NMake Makefiles"
-        python setup.py develop -G "Visual Studio 16 2019" -A x64
+        python setup.py develop -G "NMake Makefiles"
+        #python setup.py develop -G "Visual Studio 16 2019" -A x64
       if: "startsWith(matrix.platform, 'windows-')"
     - name: test
       run: |
@@ -109,10 +109,13 @@ jobs:
         flags: unittests
         name: codecov-umbrella
         fail_ci_if_error: true
-    #- uses: paambaati/codeclimate-action@v2.5.7
+    #- name: Upload coverage to CodeClimate
+    #  uses: paambaati/codeclimate-action@v2.5.7
     #  env: 
     #    CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_TOKEN }}
     #  with: 
-    #    coverageCommand: yarn coverage 
+    #    coverageCommand: |
+    #      node2 --with-coverage
+    #      coverage xml
     #    debug: true 
 
