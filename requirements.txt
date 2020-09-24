@@ -1,4 +1,7 @@
-wheel>=0.29.0
+#wheel>=0.29.0
+#using pip-custom-platform 
+wheel<0.34
+pip-custom-platform
 setuptools>=27.2.0
 packaging
 ninja
