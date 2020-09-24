@@ -34,7 +34,7 @@ jobs:
     - name: build dependencies(other)
       run: python setup.py develop
       if: "!startsWith(matrix.platform, 'windows-')"
-    - uses: ilammy/msvc-dev-cmd@v1.3.0
+    - uses: ilammy/msvc-dev-cmd@v1.4.0
       with:
         arch: ${{ matrix.architecture }}
         sdk: 10.0.16299.0
@@ -43,10 +43,6 @@ jobs:
     - name: build dependencies(win)
       run: |
         #choco install windows-sdk-10.0
-        #
-        vswhere -products * -latest -prerelease -find **/vcbuildtools.bat
-        #Start-Process "C:\\ProgramFiles(x86)\\Microsoft Visual Studio\\${ver}\\${ed}\\VC\\Auxiliary\\Build\\vcvarsall.bat"
-        Start-Process "C:\\ProgramFiles(x86)\\Microsoft Visual C++ Build Tools\\vcbuildtools.bat"
         python setup.py develop -G "NMake Makefiles"
         #python setup.py develop -G "Visual Studio 16 2019" -A x64
       if: "startsWith(matrix.platform, 'windows-')"
