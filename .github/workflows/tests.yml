@@ -45,8 +45,8 @@ jobs:
         #choco install windows-sdk-10.0
         #
         vswhere -products * -latest -prerelease -find **/vcbuildtools.bat
-        #Start-Process `C:\\ProgramFiles(x86)\\Microsoft Visual Studio\\${ver}\\${ed}\\VC\\Auxiliary\\Build\\vcvarsall.bat`
-        Start-Process `C:\\ProgramFiles(x86)\\Microsoft Visual C++ Build Tools\\vcbuildtools.bat`
+        #Start-Process "C:\\ProgramFiles(x86)\\Microsoft Visual Studio\\${ver}\\${ed}\\VC\\Auxiliary\\Build\\vcvarsall.bat"
+        Start-Process "C:\\ProgramFiles(x86)\\Microsoft Visual C++ Build Tools\\vcbuildtools.bat"
         python setup.py develop -G "NMake Makefiles"
         #python setup.py develop -G "Visual Studio 16 2019" -A x64
       if: "startsWith(matrix.platform, 'windows-')"
