@@ -50,11 +50,12 @@ setup(name='scikit-build-template',
       cmake_args=CMAKE_ARGS,
       # packages=find_packages(),
       packages=[
-          'temp',
+        'src',
+        #exclude = ["*.tests", "*.tests.*", "tests.*", "tests"],
       ],
       zip_safe=False,
-      # The extra '/' was *only* added to check that scikit-build can handle it. 
-      package_dir={'scikit-build-template': 'temp/'}, 
+      # The extra '/' was *only* added to check that scikit-build can handle it.
+      package_dir={'scikit-build-template': 'src/'}, 
       install_requires=install_requires,
       classifiers=[
           'License :: OSI Approved :: MIT License',

@@ -85,4 +85,5 @@ link_directories(${EXTERNAL_PKG_LIBRARYDIR})
 add_definitions(${EXTERNAL_PKG_DEFINITIONS})
 
 # Process the CMakeLists.txt in the 'temp' directory.
-add_subdirectory(temp)
+#add_subdirectory(temp)
+add_subdirectory(src/temp)

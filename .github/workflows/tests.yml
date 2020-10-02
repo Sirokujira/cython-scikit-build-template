@@ -34,7 +34,7 @@ jobs:
     - name: build dependencies(other)
       run: python setup.py develop
       if: "!startsWith(matrix.platform, 'windows-')"
-    - uses: ilammy/msvc-dev-cmd@v1.3.0
+    - uses: ilammy/msvc-dev-cmd@v1.4.0
       with:
         arch: ${{ matrix.architecture }}
         sdk: 10.0.16299.0
