@@ -26,7 +26,7 @@ jobs:
       run: choco install vcpython27 -y
     - name: Install Visual C++ Build Tools 2015
       if: startsWith(matrix.platform, 'windows-')
-      run: choco install VisualCppBukldTools
+      run: choco install VisualCppBuildTools
     - name: Install dependencies
       run: |
         python -m pip install -U pip
