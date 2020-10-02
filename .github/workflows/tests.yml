@@ -42,11 +42,11 @@ jobs:
       run: python setup.py develop
       if: "!startsWith(matrix.platform, 'windows-')"
     - uses: ilammy/msvc-dev-cmd@v1.4.0
-      with:
-        arch: ${{ matrix.architecture }}
-        #sdk: 10.0.16299.0
-        ##toolset: 14.11
-        toolset: 14.26
+      #with:
+      #  arch: ${{ matrix.architecture }}
+      #  #sdk: 10.0.16299.0
+      #  ##toolset: 14.11
+      #  #toolset: 14.26
       if: "startsWith(matrix.platform, 'windows-')"
     - name: build dependencies(win)
       run: |
