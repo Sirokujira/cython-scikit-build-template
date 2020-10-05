@@ -39,8 +39,10 @@ jobs:
       run: python -m pip install -r requirements.txt
     - name: Create packages
       run: |
-        pip-custom-platform wheel --platform ${{matrix.platform }} temp
-        #python setup.py bdist_wheel --platform ${{ matrix.platform }}
+        #pip-custom-platform wheel --platform ${{matrix.platform}} scikit_build_template
+        python setup.py sdist bdist_wheel
+    #- name: Rename wheel
+    #  run: mv scikit-build-template
     - uses: actions/upload-artifact@v1
       with:
         name: scikit-build-template
@@ -60,7 +62,7 @@ jobs:
   #  runs-on: ${{ matrix.platform }}
   #  strategy:
   #    matrix:
-  #      platform: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04]
+  #      platform: [ubuntu-latest]
   #  steps:
   #  - name: Install dependencies
   #    run: python -m pip install -r requirements.txt
@@ -89,7 +91,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [2.7, 3.5, 3.6, 3.7, 3.8]
+        python-version: [3.5, 3.6, 3.7, 3.8]
 
     steps:
     - uses: actions/checkout@v1
@@ -105,12 +107,13 @@ jobs:
       run: |
         python -m pip install --upgrade delocate -q
         delocate-addplat --rm-orig \
-          -p macosx_10_15_x86_64 \
-          -p macosx_10_14_x86_64 \
-          -p macosx_10_13_x86_64 \
+          #-p macosx_10_15_x86_64 \
+          #-p macosx_10_14_x86_64 \
+          #-p macosx_10_13_x86_64 \
           -p macosx_10_12_x86_64 \
-          -p macosx_10_11_x86_64 \
-          -p macosx_10_10_x86_64 \
+          #-p macosx_10_11_x86_64 \
+          #-p macosx_10_10_x86_64 \
+          #-p macosx_10_9_x86_64 \
           dist/*.whl
     - uses: actions/upload-artifact@master
       with:
@@ -122,7 +125,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [2.7, 3.6, 3.7, 3.8]
+        python-version: [3.5, 3.6, 3.7, 3.8]
         #architecture: ['x86', 'x64']
         architecture: ['x64']
     steps:
@@ -157,12 +160,12 @@ jobs:
         name: scikit-build-template
         path: dist
 
-  build:
+  uload_package:
     needs:
       - build_sdist
       - build_wheel_linux
       - build_wheel_macos
-      # - build_wheel_windows
+      - build_wheel_windows
     runs-on: ubuntu-latest
     steps:
     - uses: actions/download-artifact@v1
@@ -171,3 +174,14 @@ jobs:
         path: dist
     - name: Show result
       run: ls -l dist
+    - name: Publish distribution 📦   to Test PyPI
+      uses: pypa/gh-action-pypi-publish@master
+      with:
+        password: ${{ secrets.test_pypi_password }}
+        repository_url: https://test.pypi.org/legacy/
+    - name: Publish distribution 📦   to PyPI
+      if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
+      uses: pypa/gh-action-pypi-publish@master
+      with:
+        password: ${{ secrets.pypi_password }}
+

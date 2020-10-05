@@ -8,6 +8,7 @@ from skbuild import setup
 # from skbuild.exceptions import SKBuildError
 # from packaging.version import LegacyVersion
 # from distutils.version import LooseVersion
+import platform
 
 # from ctypes.util import find_library
 setup_requires = [
@@ -20,20 +21,19 @@ install_requires = [
     'Cython',
 ]
 
-MOD_NAMES = [ 
-    'pi_calculator', 
-    'rect', 
+MOD_NAMES = [
+    'pi_calculator',
+    'rect',
 ]
 
-import platform
 if platform.system() == 'Windows':
-    #https://stackoverflow.com/questions/31262342/cmake-g-ninja-on-windows-specify-x64
-    #CMAKE_ARGS=['-DCMAKE_C_COMPILER=cl.exe', '-DCMAKE_CXX_COMPILER=cl.exe', '-DMSVC_TOOLSET_VERSION=140']
-    CMAKE_ARGS=['-DCMAKE_C_COMPILER=cl.exe', '-DCMAKE_CXX_COMPILER=cl.exe']
+    # https://stackoverflow.com/questions/31262342/cmake-g-ninja-on-windows-specify-x64
+    # CMAKE_ARGS=['-DCMAKE_C_COMPILER=cl.exe', '-DCMAKE_CXX_COMPILER=cl.exe', '-DMSVC_TOOLSET_VERSION=140']
+    CMAKE_ARGS = ['-DCMAKE_C_COMPILER=cl.exe', '-DCMAKE_CXX_COMPILER=cl.exe']
 elif platform.system() == 'Darwin':
-    CMAKE_ARGS=['-DCMAKE_C_COMPILER=clang', '-DCMAKE_CXX_COMPILER=clang++']
+    CMAKE_ARGS = ['-DCMAKE_C_COMPILER=clang', '-DCMAKE_CXX_COMPILER=clang++']
 else:
-    CMAKE_ARGS=['-DCMAKE_C_COMPILER=gcc', '-DCMAKE_CXX_COMPILER=g++']
+    CMAKE_ARGS = ['-DCMAKE_C_COMPILER=gcc', '-DCMAKE_CXX_COMPILER=g++']
 
 setup(name='scikit-build-template',
       description='cython cmake template modules',
@@ -50,12 +50,12 @@ setup(name='scikit-build-template',
       cmake_args=CMAKE_ARGS,
       # packages=find_packages(),
       packages=[
-        'src',
-        #exclude = ["*.tests", "*.tests.*", "tests.*", "tests"],
+          'src',
+          # exclude = ["*.tests", "*.tests.*", "tests.*", "tests"],
       ],
       zip_safe=False,
       # The extra '/' was *only* added to check that scikit-build can handle it.
-      package_dir={'scikit-build-template': 'src/'}, 
+      package_dir={'scikit-build-template': 'src/'},
       install_requires=install_requires,
       classifiers=[
           'License :: OSI Approved :: MIT License',
@@ -72,6 +72,6 @@ setup(name='scikit-build-template',
       tests_require=['mock', 'nose'],
       test_suite='nose2.collector.collector',
       # use pytest?
-      #tests_require=['pytest'],
-      #test_suite='tests'
-)
+      # tests_require=['pytest'],
+      # test_suite='tests'
+      )

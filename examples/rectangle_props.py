@@ -3,6 +3,7 @@ import sys
 # from rect import Rectangle
 from temp.rect import Rectangle
 
+
 def main(x0, y0, x1, y1):
     rect = Rectangle(int(x0), int(y0), int(x1), int(y1))
     msg = 'For the rectangle with corners located at ('
@@ -14,6 +15,7 @@ def main(x0, y0, x1, y1):
     print(msg)
     msg = 'The area is ' + str(rect.getArea()) + '.'
     print(msg)
+
 
 if __name__ == '__main__':
     usage = sys.argv[0] + ' x0 y0 x1 y1'
