@@ -107,13 +107,13 @@ jobs:
       run: |
         python -m pip install --upgrade delocate -q
         delocate-addplat --rm-orig \
-          #-p macosx_10_15_x86_64 \
-          #-p macosx_10_14_x86_64 \
-          #-p macosx_10_13_x86_64 \
+          -p macosx_10_15_x86_64 \
+          -p macosx_10_14_x86_64 \
+          -p macosx_10_13_x86_64 \
           -p macosx_10_12_x86_64 \
-          #-p macosx_10_11_x86_64 \
-          #-p macosx_10_10_x86_64 \
-          #-p macosx_10_9_x86_64 \
+          -p macosx_10_11_x86_64 \
+          -p macosx_10_10_x86_64 \
+          -p macosx_10_9_x86_64 \
           dist/*.whl
     - uses: actions/upload-artifact@master
       with:
@@ -160,7 +160,7 @@ jobs:
         name: scikit-build-template
         path: dist
 
-  uload_package:
+  upload_package:
     needs:
       - build_sdist
       - build_wheel_linux
