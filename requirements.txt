@@ -1,9 +1,8 @@
 #wheel>=0.29.0
 #using pip-custom-platform
 # pip-custom-platform currently does not work with pip>=19.3
-pip<19.3 
-wheel<0.34
-pip-custom-platform
+#pip-custom-platform
+git+https://github.com/asottile/pip-custom-platform@master
 setuptools>=27.2.0
 packaging
 ninja
