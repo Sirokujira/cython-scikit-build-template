@@ -1,4 +1,4 @@
-# scikit-template : Cython cmake template examples
+# cython-scikit-build-template : Cython cmake template examples
 
 [![pypi](https://img.shields.io/pypi/v/scikit-build-template.svg)](https://pypi.python.org/pypi/scikit-build-template)
 
@@ -28,7 +28,7 @@ For detailed instructions on installing template, see [the installation guide](h
 You can install template using `pip`:
 
 ```sh
-$ pip install template
+$ pip install cython-scikit-build-template
 ```
 
 The latest version of template libraries are included in binary packages (wheels).
@@ -100,6 +100,11 @@ https://docs.travis-ci.com/user/deployment-v2/providers/pypi/
 ```sh
 $ travis encrypt $(your-pypi-password-here) --add deploy.password
 ```
+
+# generate CHANGELOG.md
+
+* using github-changelog-generator : https://github.com/github-changelog-generatt
+or/github-changelog-generator
 
 ## Replace
 
