@@ -1,9 +1,9 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 from __future__ import print_function
-# from collections import defaultdict
 # This line replaces 'from setuptools import setup'
 from skbuild import setup
+from setuptools import find_packages
 # from skbuild.cmaker import get_cmake_version
 # from skbuild.exceptions import SKBuildError
 # from packaging.version import LegacyVersion
@@ -35,9 +35,11 @@ elif platform.system() == 'Darwin':
 else:
     CMAKE_ARGS = ['-DCMAKE_C_COMPILER=gcc', '-DCMAKE_CXX_COMPILER=g++']
 
-setup(name='scikit-build-template',
+setup(
+      #name='scikit_build_template',
+      name='temp',
       description='cython cmake template modules',
-      url='http://github.com/sirokujira/cython-cmake-template',
+      url='https://github.com/Sirokujira/cython-scikit-build-template',
       version='0.0.1.dev0',
       # check github tag version
       use_scm_version=False,
@@ -48,14 +50,18 @@ setup(name='scikit-build-template',
       maintainer_email='t753github@gmail.com',
       license='MIT',
       cmake_args=CMAKE_ARGS,
-      # packages=find_packages(),
-      packages=[
+      packages=find_packages(
           'src',
-          # exclude = ["*.tests", "*.tests.*", "tests.*", "tests"],
-      ],
+          exclude = ["*.tests", "*.tests.*", "tests.*", "tests"],
+      ), 
+      #packages=[
+      #    'src',
+      #    exclude = ["*.tests", "*.tests.*", "tests.*", "tests"],
+      #],
       zip_safe=False,
       # The extra '/' was *only* added to check that scikit-build can handle it.
-      package_dir={'scikit-build-template': 'src/'},
+      #package_dir = {'scikit-build-template': 'src/'},
+      package_dir = {'': 'src'},
       install_requires=install_requires,
       classifiers=[
           'License :: OSI Approved :: MIT License',
@@ -68,10 +74,10 @@ setup(name='scikit-build-template',
           'Programming Language :: Python :: Implementation :: CPython',
           'Programming Language :: Python :: Implementation :: PyPy'
       ],
-      # use nose2
-      tests_require=['mock', 'nose'],
-      test_suite='nose2.collector.collector',
+      ## use nose2
+      #tests_require=['mock', 'nose'],
+      #test_suite='nose2.collector.collector',
       # use pytest?
-      # tests_require=['pytest'],
-      # test_suite='tests'
+      tests_require=['pytest'],
+      test_suite='tests'
       )

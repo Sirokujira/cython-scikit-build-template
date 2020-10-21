@@ -8,6 +8,14 @@ cdef class Rectangle:
     def __dealloc__(self):
         del self.thisptr
 
+    @property
+    def x(self):
+        return self.thisptr.x0
+
+    @property
+    def y(self):
+        return self.thisptr.y0
+
     cpdef getLength(self):
         return self.thisptr.getLength()
 
