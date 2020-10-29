@@ -149,7 +149,7 @@ jobs:
         choco install -y microsoft-build-tools
     - name: Install dependencies
       run: python -m pip install -r requirements.txt
-    - uses: ilammy/msvc-dev-cmd@v1.4.0
+    - uses: ilammy/msvc-dev-cmd@v1.4.1
     - name: Create packages
       run: |
         python setup.py bdist_wheel -G "NMake Makefiles"
