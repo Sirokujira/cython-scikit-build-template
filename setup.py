@@ -40,7 +40,7 @@ setup(
       # name='temp',
       description='cython cmake template modules',
       url='https://github.com/Sirokujira/cython-scikit-build-template',
-      version='0.0.1.dev1',
+      version='0.0.1.dev2',
       # check github tag version
       use_scm_version=False,
       setup_requires=setup_requires,
@@ -67,6 +67,7 @@ setup(
           'Programming Language :: Python :: 3.5',
           'Programming Language :: Python :: 3.6',
           'Programming Language :: Python :: 3.7',
+          'Programming Language :: Python :: 3.8',
           'Programming Language :: Python :: Implementation :: CPython',
           'Programming Language :: Python :: Implementation :: PyPy'
       ],
