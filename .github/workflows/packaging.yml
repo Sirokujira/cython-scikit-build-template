@@ -3,23 +3,23 @@ name: Packaging
 on: [push]
 
 jobs:
-  # build_sdist:
-  #   runs-on: ubuntu-latest
-  # strategy:
-  #   matrix:
-  #     python-version: [3.8]
-  # steps:
-  # - uses: actions/checkout@v1
-  # - name: Set up Python ${{ matrix.python-version }}
-  #   uses: actions/setup-python@v1
-  #   with:
-  #      python-version: ${{ matrix.python-version }}
-  #  - name: Install dependencies
-  #    run: python setup.py sdist
-  #  - uses: actions/upload-artifact@v1
-  #    with:
-  #      name: scikit-build-template
-  #      path: dist
+  build_sdist:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: python setup.py sdist
+    - uses: actions/upload-artifact@v1
+      with:
+        name: scikit-build-template
+        path: dist
 
   build_wheel_linux:
     runs-on: ${{ matrix.platform }}
@@ -38,7 +38,7 @@ jobs:
     - name: Create packages
       run: |
         #pip-custom-platform wheel --platform ${{matrix.platform}} scikit_build_template
-        python setup.py sdist bdist_wheel
+        python setup.py bdist_wheel
     #- name: Rename wheel
     #  run: mv scikit-build-template
     - uses: actions/upload-artifact@v1
@@ -56,33 +56,23 @@ jobs:
 #   #  with:
 #   #    password: ${{ secrets.pypi_password }}
 
-  #build_wheel_linux:
-  #  runs-on: ${{ matrix.platform }}
-  #  strategy:
-  #    matrix:
-  #      platform: [ubuntu-latest]
-  #  steps:
-  #  - name: Install dependencies
-  #    run: python -m pip install -r requirements.txt
-  #  - uses: actions/checkout@v1
-  #  - name: Build manylinux1/manylinux2010 wheel
-  #    run: |
-  #      docker info
-  #      ./scripts/build_manylinux_wrapper.sh
-  #  - uses: actions/upload-artifact@master
-  #    with:
-  #      name: scikit-build-template
-  #      path: dist/wheelhouse
-  #  - name: Publish distribution 📦 to Test PyPI
-  #    uses: pypa/gh-action-pypi-publish@master
-  #    with:
-  #      password: ${{ secrets.test_pypi_password }}
-  #      repository_url: https://test.pypi.org/legacy/
-  #  - name: Publish distribution 📦 to PyPI
-  #    if: startsWith(github.ref, 'refs/tags')
-  #    uses: pypa/gh-action-pypi-publish@master
-  #    with:
-  #      password: ${{ secrets.pypi_password }}
+  build_wheel_manylinux:
+    runs-on: ${{ matrix.platform }}
+    strategy:
+      matrix:
+        platform: [ubuntu-latest]
+    steps:
+    - name: Install dependencies
+      run: python -m pip install -r requirements.txt
+    - uses: actions/checkout@v1
+    - name: Build manylinux1/manylinux1/2010/2014 wheel
+      run: |
+        #docker info
+        #./scripts/build_manylinux_wrapper.sh
+        python setup.py bdist_wheel -p manylinux1_x86_64
+        python setup.py bdist_wheel -p manylinux2010_x86_64
+        python setup.py bdist_wheel -p manylinux2014_x86_64
+
 
   build_wheel_macos:
     runs-on: macos-latest
@@ -160,8 +150,9 @@ jobs:
 
   upload_package:
     needs:
-      # - build_sdist
-      - build_wheel_linux
+      - build_sdist
+      #- build_wheel_linux
+      - build_wheel_maylinux
       - build_wheel_macos
       - build_wheel_windows
     runs-on: ubuntu-latest
