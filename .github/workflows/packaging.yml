@@ -40,23 +40,14 @@ jobs:
     - name: Create packages
       run: |
         #pip-custom-platform wheel --platform ${{matrix.platform}} scikit_build_template
-        python setup.py bdist_wheel
+        #python setup.py bdist_wheel
+        python setup.py bdist_wheel --dist-dir=bdist
     #- name: Rename wheel
     #  run: mv scikit-build-template
     - uses: actions/upload-artifact@v1
       with:
         name: scikit-build-template
-        path: dist
-#   #- name: Publish distribution 📦  to Test PyPI
-#   #    uses: pypa/gh-action-pypi-publish@master
-#   #    with:
-#   #      password: ${{ secrets.test_pypi_password }}
-#   #      repository_url: https://test.pypi.org/legacy/
-#   #- name: Publish distribution 📦  to PyPI
-#   #  if: startsWith(github.ref, 'refs/tags')
-#   #  uses: pypa/gh-action-pypi-publish@master
-#   #  with:
-#   #    password: ${{ secrets.pypi_password }}
+        path: bdist
 
   build_wheel_manylinux:
     runs-on: ${{ matrix.platform }}
