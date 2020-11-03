@@ -44,10 +44,10 @@ jobs:
         python setup.py bdist_wheel --dist-dir=bdist
     #- name: Rename wheel
     #  run: mv scikit-build-template
-    - uses: actions/upload-artifact@v1
-      with:
-        name: scikit-build-template
-        path: bdist
+    #- uses: actions/upload-artifact@v1
+    #  with:
+    #    name: scikit-build-template
+    #    path: bdist
 
   build_wheel_manylinux:
     runs-on: ${{ matrix.platform }}
@@ -70,6 +70,11 @@ jobs:
         python setup.py bdist_wheel -p manylinux1_x86_64
         python setup.py bdist_wheel -p manylinux2010_x86_64
         python setup.py bdist_wheel -p manylinux2014_x86_64
+    - uses: actions/upload-artifact@v1
+      with:
+        name: scikit-build-template
+        path: dist
+
 
 
   build_wheel_macos:
