@@ -1,14 +1,11 @@
 name: cython-scikit-build-template
 
 channels:
-- !!python/unicode
-  'conda-forge'
-  # - anaconda
-
+  - defaults
 dependencies:
-  - python==3.6
+  # - python=3.6
   # 2.1.x exhale ng?
-  - Sphinx==2.0
+  - Sphinx=2.0
   - doxygen
   - Cython>=0.25.2
   - scikit-build
