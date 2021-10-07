@@ -22,4 +22,4 @@ dependencies:
   #   # - breathe>=4.13.0
   #   # - exhale
   #   - sphinx-rtd-theme
-    
+    - matplotlib
