@@ -28,7 +28,7 @@ For detailed instructions on installing template, see [the installation guide](h
 You can install template using `pip`:
 
 ```sh
-$ pip install cython-scikit-build-template
+$ python -m pip install cython-scikit-build-template
 ```
 
 The latest version of template libraries are included in binary packages (wheels).
